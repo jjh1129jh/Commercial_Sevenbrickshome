@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="VisitLog">
+	
+	<insert id="insertVisitLog" parameterType="hashmap">
+		<selectKey resultType="string" keyProperty="id" order="BEFORE">
+			SELECT CONCAT(#{sbVisitLogId},LPAD((SELECT NEXTVAL(SB_VISIT_LOG_SEQ)), 10, 0))
+		</selectKey>
+		INSERT INTO SB_VISIT_LOG(
+					 SB_VISIT_LOG_ID
+					,SB_USER_ID
+					,TYPE
+					,VISIT_IP
+					,VISIT_REFER_DOMAIN
+					,VISIT_REFER
+					,VISIT_ORIGIN_AGENT
+					,VISIT_AGENT
+					,VISIT_OS
+					,VISIT_DATE
+					,WORK_TYPE
+					,USE_YN
+					,REG_ID
+					,REG_DATE
+		)VALUES(
+					 #{id}
+					,#{sbUserId, jdbcType=VARCHAR}
+					,#{type, jdbcType=VARCHAR}
+					,#{visitIp, jdbcType=VARCHAR}
+					,#{visitReferDomain, jdbcType=VARCHAR}
+					,#{visitRefer, jdbcType=VARCHAR}
+					,#{visitOriginAgent, jdbcType=VARCHAR}
+					,#{visitAgent, jdbcType=VARCHAR}
+					,#{visitOs, jdbcType=VARCHAR}
+					,NOW()
+					,#{workType, jdbcType=VARCHAR}
+					,'Y'
+					,#{regId}
+					,NOW()
+		)
+	</insert>
+	
+</mapper>

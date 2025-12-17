@@ -1,0 +1,89 @@
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans KR Thin'), local('Noto Sans CJK KR Thin'),
+    url(/font/NotoSansKR-Thin.woff2) format('woff2'),
+    url(/font/NotoSansKR-Thin.woff) format('woff'),
+    url(/font/NotoSansKR-Thin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans KR Light'), local('Noto Sans CJK KR Light'),
+    url(/font/NotoSansKR-Light.woff2) format('woff2'),
+    url(/font/NotoSansKR-Light.woff) format('woff'),
+    url(/font/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans KR Regular'), local('Noto Sans CJK KR Regular'),
+    url(/font/NotoSansKR-Regular.woff2) format('woff2'),
+    url(/font/NotoSansKR-Regular.woff) format('woff'),
+    url(/font/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans KR Medium'), local('Noto Sans CJK KR Medium'),
+    url(/font/NotoSansKR-Medium.woff2) format('woff2'),
+    url(/font/NotoSansKR-Medium.woff) format('woff'),
+    url(/font/NotoSansKR-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans KR Bold'), local('Noto Sans CJK KR Bold'),
+    url(/font/NotoSansKR-Bold.woff2) format('woff2'),
+    url(/font/NotoSansKR-Bold.woff) format('woff'),
+    url(/font/NotoSansKR-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Noto Sans KR Black'), local('Noto Sans CJK KR Black'),
+    url(/font/NotoSansKR-Black.woff) format('woff'),
+    url(/font/NotoSansKR-Black.otf) format('opentype');
+}
+
+
+@font-face {
+    font-family: 'Black Han Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('BlackHanSans-Regular'), 
+    url(/font/BlackHanSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'SB Aggro';
+	font-weight: 300;
+	font-style: normal;
+	src: url(/font/SBAggroL.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'SB Aggro';
+	font-weight: 400;
+	font-style: normal;
+	src: url(/font/SBAggroM.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'SB Aggro';
+	font-weight: 700;
+	font-style: normal;
+	src: url(/font/SBAggroB.ttf) format('truetype');
+}

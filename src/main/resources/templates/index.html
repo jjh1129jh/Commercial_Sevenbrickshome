@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="keyword" content="HTML, meta, tag, element, reference">
+	<meta name="author" content="쌤하고">
+	<meta name="description" content="{props.description}" data-react-helmet="true">
+
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="Cache-Control" content="No-Cache">
+	<meta http-equiv="pragma" content="No-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- sns미리보기 -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://samhago.com/">
+	<meta property="og:image" content="http://samhago.com/image/con1_banner2M.png">
+	<meta property="og:title" content="쌤하고">
+	<meta property="og:description" content="스스로 공부하는 아아를 만드는 최고의 서비스!">
+
+	<!-- 사이트등록및소유확인 -->
+	<meta name="naver-site-verification" content="" />
+	<title>쌤하고</title>
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/image/favicon.ico?v1.0" type="image/x-icon">
+	<link rel="icon" href="/image/favicon.ico?v1.0" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/image/favicon.ico?v1.0">
+
+	<!-- 베이스css -->
+	<link rel="stylesheet" href="/bootstrap/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+
+	<!-- 적용css -->
+	<link rel="stylesheet" href="/css/common.css?v1.0">
+	<link rel="stylesheet" href="/css/font.css">
+	<link rel="stylesheet" href="/css/jquery-ui.css">
+	<link rel="stylesheet" href="/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/css/home.css?v1.4">
+
+	<!-- 베이스script -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/bootstrap/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+
+	<!-- 적용script -->
+	<script src="/js/jquery-ui.js"></script>
+	<script src="/js/swiper-bundle.min.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZPTZJH7VX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZZBV5V5K1X');
+</script>
+<!--<script>
+	(function () { var w = window; if (w.ChannelIO) { return w.console.error("ChannelIO script included twice."); } var ch = function () { ch.c(arguments); }; ch.q = []; ch.c = function (args) { ch.q.push(args); }; w.ChannelIO = ch; function l() { if (w.ChannelIOInitialized) { return; } w.ChannelIOInitialized = true; var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js"; var x = document.getElementsByTagName("script")[0]; if (x.parentNode) { x.parentNode.insertBefore(s, x); } } if (document.readyState === "complete") { l(); } else { w.addEventListener("DOMContentLoaded", l); w.addEventListener("load", l); } })();
+
+	ChannelIO('boot', {
+		"pluginKey": "7b7cba9d-0400-4208-9638-0cb773acdda2"
+	});
+</script>-->
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
+	integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4"
+	crossorigin="anonymous"></script>
+<script>
+  Kakao.init('92282ee56dc6526be32c15b4b5e4798c'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
+<body>
+<div class="project_wrap">
+	<header>
+		<div class="header_banner">
+			<img class="pc" src="/image/header_banner.svg" alt="배너" />
+			<p class="mb"><span>스</span><span>스</span><span>로 </span><span>공부하는 아이</span>를 만드는 최고의 서비스!</p>
+		</div>
+		<div class="header_nav">
+			<!--<div class="header_top">
+				<ul>
+					<li><a href="https://app.samhago.com">공부방입장</a></li>
+					<li><a href="#">가입하기</a></li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+			</div>-->
+			<div class="header_btm">
+				<ul>
+					<li class="pc"><a href="/"><img src="/image/logo.svg" alt="logo"/></a></li>
+					<li name="menu"><a onClick="fn_move(this, 'banner1')">쌤하고 소개</a></li>
+					<li name="menu"><a onClick="fn_move(this, 'banner2')">서비스가격</a></li>
+					<li name="menu"><a href="https://www.youtube.com/channel/UCznELMmdhINmwpKg_XSrFFg"
+							onClick="fn_move(this, '')">쌤하고TV</a></li>
+					<li name="menu" class="active"><a href="https://app.samhago.com" onClick="fn_move(this, '')"
+							target="_blank">쌤하고
+							입장하기</a></li>
+					<!-- <li name="menu" class="active"><a style="color:#FFFFFF; background: #EC7B56; padding: 5px 20px; border-radius: 45px;" target="_blank" onClick="fn_move(this, 'section7')">체험 신청</a></li> -->
+					<li name="menu" class="active"><a href="https://app.samhago.com/webpolicy/selectPolicyIntro.do"
+							style="color:#FFFFFF; background: #1E869F; padding: 5px 20px; border-radius: 45px;"
+							target="_blank">회원가입</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="mb">
+			<a href="/" class="logo"><img src="/image/logo.svg" alt="logo"/></a>
+			<button class="menu_btn" onClick="openMenu()"><img src="/image/menu.svg" alt="menu"/></button>
+		</div>
+	</header>
+	<div class="side">
+		<!-- <div><button class="application" onclick="fn_applyIntro()"><img src="/image/side1.svg"
+					alt="체험신청">체험신청</button></div> -->
+		<div><button class="application" onclick="fn_semhagoJoin();"><img src="/image/side1.svg"
+					alt="회원가입">회원가입</button></div>
+		<div><button class="enter" onclick="fn_semhagoIntro()"><img src="/image/side2.svg" alt="입장하기">입장하기</button>
+		</div>
+		<div><button class="talk" onclick="chatChannel();"><img src="/image/talk.svg" alt="상담문의">상담문의</button></div>
+	</div>
+	<div class="content1"><!--메인베너-->
+		<div class="bannerSwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img class="pc" src="/image/con1_banner1.svg" alt="banner1"/>
+					<img class="mb" src="/image/con1_banner1M.svg" alt="banner1"/>
+				</div>
+				<div class="swiper-slide">
+					<img class="pc" src="/image/con1_banner2.png" alt="banner2"/>
+					<img class="mb" src="/image/con1_banner2M.png" alt="banner2"/>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<div class="content2 conBox" id="banner1"><!--쌤하고란?-->
+		<div class="criteria">
+			<div class="font_title">
+				<p>쌤하고란?</p>
+				<p>
+					학생들이 매일 해야하는 학교 숙제, 학원 숙제, 개인 공부 등을<br class="smallMb"/> 정해진 시간에<br class="smallPc"/>
+					책상에 앉아 수행할 수 있도록<br class="smallMb"/> 엄마 대신 쌤이 함께 해주는 서비스입니다.
+				</p>
+			</div>
+			<div class="con_box">
+				<p>쌤하고 숙제하기 추천 대상</p>
+				<ul>
+					<li>평소 집에서 숙제를<br class="mb"/> 시작하는 시간이 <br class="tablet"/>규칙적이지 않은 학생</li>
+					<li>1시간이면 끝낼 숙제를<br class="mb"/> 집중하지 못하고 시간을<br/>오래 끄는 습관을 가진 학생</li>
+					<li>학원가기 전 숙제를<br class="mb"/> 허둥지둥하고 가는 학생</li>
+					<li>매일 엄마와<br class="mb"/> 숙제 전쟁을 치르는 학생</li>
+					<li>학원을 안다니는데<br class="mb"/> 뭘 해야 할지 모르는 학생</li>
+					<li>공부 습관이 없는 학생</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="content3 conBox"><!--숙제습관의 힘-->
+		<div class="icon_title">
+			<img src="/image/con3_title_icon.svg" alt="icon"/>
+			<p>숙제 습관이 평생 학습 습관을 결정합니다.</p>
+		</div>
+		<div class="con_box">
+			<div class="criteria">
+				<ul class="first">
+					<li>역사상 최대 규모의 학습 습관 연구가 밝혀낸</li>
+					<li>‘숙제 습관의 힘’</li>
+					<li>규칙적인 숙제 습관을 가지게 되면?</li>
+				</ul>
+				<ul class="last">
+					<li>
+						<img src="/image/con3_1.png" alt="img1"/>
+						<div>
+							<p>solution 1</p>
+							<p>커뮤니케이션 능력을<br/>향상 시킵니다.</p>
+						</div>
+					</li>
+					<li class="reverse">
+						<img src="/image/con3_2.png" alt="img2"/>
+						<div>
+							<p>solution 2</p>
+							<p>아이의 정서 안정에<br/>도움을 줍니다.</p>
+						</div>
+					</li>
+					<li>
+						<img src="/image/con3_3.png" alt="img3"/>
+						<div>
+							<p>solution 3</p>
+							<p>수업 참여에<br/>자신감이 커집니다.</p>
+						</div>
+					</li>
+					<li class="reverse">
+						<img src="/image/con3_4.png" alt="img4"/>
+						<div>
+							<p>solution 4</p>
+							<p>숙제의 스트레스를<br/>감소시켜 줍니다.</p>
+						</div>
+					</li>
+					<li>
+						<img src="/image/con3_5.png" alt="img5"/>
+						<div>
+							<p>solution 5</p>
+							<p>미디어 사용 시간이<br/>줄어듭니다.</p>
+						</div>
+					</li>
+					<li class="reverse">
+						<img src="/image/con3_6.png" alt="img6"/>
+						<div>
+							<p>solution 6</p>
+							<p>성적 향상에<br/>큰 도움을 줍니다.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="content4"><!--쌤하고는 약속합니다.-->
+		<div class="icon_title">
+			<img src="/image/con4_title_icon.svg" alt="icon"/>
+			<p>쌤하고는 약속합니다.</p>
+		</div>
+		<div class="con_box">
+			<div class="criteria">
+				<ul>
+					<li>
+						<img src="/image/con4_bgS.svg" alt="bg"/>
+						<p>규칙적으로<br/>책상에 앉게 합니다.</p>
+					</li>
+					<li>
+						<img src="/image/con4_bgS.svg" alt="bg"/>
+						<p>숙제가<br/>밀리지 않게 합니다.</p>
+					</li>
+					<li>
+						<img src="/image/con4_bgS.svg" alt="bg"/>
+						<p>자유시간이 늘어나<br/>아이가 더 좋아합니다.</p>
+					</li>
+					<li>
+						<img src="/image/con4_bgS.svg" alt="bg"/>
+						<p>숙제가<br/>빨리 끝납니다.</p>
+					</li>
+					<li>
+						<img src="/image/con4_bgL.svg" alt="bg"/>
+						<p>해야 할 일을 끝내고<br/>효능감을 느끼는 아이로 바뀝니다.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="content5"><!--쌤하고는 어떻게 이용하나요?-->
+		<div class="icon_title">
+			<img src="/image/con5_title_icon.svg" alt="icon"/>
+			<p>쌤하고는 어떻게 이용하나요?</p>
+		</div>
+		<div class="con_box">
+			<div class="criteria">
+				<div class="stone_box">
+					<p class="sTitle">쌤하고 등록 절차</p>
+					<ul>
+						<li>
+							<img src="/image/blue_stone.svg" alt="bg"/>
+							<p><span class="mb">1. </span>회원가입</p>
+						</li>
+						<li>
+							<img src="/image/yellow_stone.svg" alt="bg"/>
+							<p><span class="mb">2. </span>주간 스케줄<br/>및 숙제 분석</p>
+						</li>
+						<li>
+							<img src="/image/orange_stone.svg" alt="bg"/>
+							<p><span class="mb">3. </span>요일별 시간표<br/>추천 및 선택</p>
+						</li>
+						<li>
+							<img src="/image/green_stone.svg" alt="bg"/>
+							<p><span class="mb">4. </span>관리 시작</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="table_box" id="banner2">
+					<p class="sTitle">쌤하고 운영시간 및 이용가격</p>
+					<p>
+						월요일 ~ 금요일 오후 4시부터 저녁 10시까지 원하는 시간에<br/>
+						입장하여 숙제가 끝날 때 까지 이용할 수 있습니다.
+					</p>
+					<table>
+						<tr>
+							<td></td>
+							<td>월 - 금</td>
+							<td>가격</td>
+							<!--<td>주 3일</td>-->
+							<td>이용조건</td>
+						</tr>
+						<tr>
+							<td>요일/<br class="smallMb"/>시간</td>
+							<th>PM<br class="smallMb"/>4시-10시</th>
+							<th>120,000원</th>
+							<!--<th>90,000원</th>-->
+							<th><span class="smallPc">숙제를 다 마칠때까지<br/></span>최대 3시간<br class="smallMb"/> 이용 가능
+							</th>
+						</tr>
+					</table>
+					<ul>
+						<li>입장 시간은 회원이 정할 수 있습니다.</li>
+						<li>등록시에 요일과 시간을 선택하시면 고객센터에서 전화로 확인합니다.</li>
+						<li>요일별 입장 시간도 자유롭게 선택이 가능합니다.</li>
+						<li>저녁 9시 입장 회원은 1시간 이용만 가능하니 착오 없으시기 바랍니다.</li>
+						<li>쌤하고 숙제하기 서비스 가격입니다.</li>
+					</ul>
+				</div>
+
+				<div class="way_box">
+					<p class="sTitle">쌤하고 관리 방법</p>
+					<ul>
+						<li>
+							<p><span class="mb">1. </span>화상 공부방<br/>입장</p>
+						</li>
+						<li>
+							<p><span class="mb">2. </span>플래너에<br/>숙제 입력</p>
+						</li>
+						<li>
+							<p><span class="mb">3. </span>숙제 완료</p>
+						</li>
+						<li>
+							<p><span class="mb">4. </span>퇴장하기</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content6">
+		<img class="pc" src="/image/con6_banner.png" alt="banner"/>
+		<img class="mb" src="/image/con6_bannerM.png" alt="banner"/>
+	</div>
+		<!-- <div id="section7" class="content7 conBox">
+		<div class="criteria">
+			<div class="font_title">
+				<p>체험 신청하기</p>
+				<p>
+					쌤하고 숙제하기 서비스가 생소하신 고객들을 위해 1주일간 무료 체험의 기회를 드립니다.<br/>
+					아래 순서를 확인하시고 ‘체험 신청하기’ 버튼을 눌러주세요.
+				</p>
+			</div>
+			<div class="con_box">
+				<ul>
+					<li>
+						<img src="/image/con7_1.svg">
+						<p><span class="mb">1. </span>체험 신청서 작성</p>
+					</li>
+					<li>
+						<img src="/image/con7_2.svg">
+						<p><span class="mb">2. </span>고객 센터 통화</p>
+					</li>
+					<li>
+						<img src="/image/con7_3.svg">
+						<p><span class="mb">3. </span>요일 / 시간 확정</p>
+					</li>
+					<li>
+						<img src="/image/con7_4.svg">
+						<p><span class="mb">4. </span>1주일 체험 진행<br/>(평일 기준 5일)</p>
+					</li>
+				</ul>
+				<button onclick="fn_applyIntro()">체험 신청하기</button>
+			</div>
+		</div>
+	</div> -->
+	<div class="content8"><!--영상-->
+		<div class="icon_title">
+			<!--<img src="/image/con8_title_icon.svg" alt="icon"/>-->
+			<p>쌤하고 홍보영상</p>
+		</div>
+		<div class="con_box">
+			<div class="criteria">
+				<div class="video_container">
+					<iframe src="https://www.youtube.com/embed/XQ71odVBBmA" frameborder="0"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content9"><!--FAQ-->
+		<div class="icon_title">
+			<img src="/image/con9_title_icon.svg" alt="icon"/>
+			<p>FAQ</p>
+		</div>
+		<div class="con_box">
+			<div class="criteria">
+				<dl>
+					<dt class="first">Q. 쌤하고 화상 서비스에 로그인하려면 어떤 준비가 필요한가요?</dt>
+					<dd>
+						<span>●</span>쌤하고 화상 서비스는 특성상 네트워크 속도나 컴퓨터 사양이 너무 낮으면 화상 연결 품질이 떨어질 수 있습니다.<br/>
+						<span>●</span>가능하면 노트북이나 데스크탑 컴퓨터 이용을 권장합니다.<br/>
+						<span>●</span>테스크탑 컴퓨터를 이용할 경우 별도의 화상캠과 헤드셋 등이 필요하니 서비스 이용 전에 점검하여 미리 준비해주시기 바랍니다.<br/>
+						<span>●</span>테블릿은 기종에 따라 서비스 제공이 안되는 경우가 있을 수 있으니 반드시 사전에 쌤하고에 문의하셔서 테스트 해주시기 바랍니다.
+					</dd>
+
+					<dt>Q. 쌤하고 이용시간은 요일별로 달라도 되나요?</dt>
+					<dd>
+						<span>●</span>쌤하고는 월요일부터 금요일, 오후 4시 ~ 저녁 10시까지 운영됩니다.
+						매일 같은 시간을 정해서 숙제하는 습관이 가장 좋지만 개인 스케쥴이 다를수 있으므로 요일별로 다른 시간에 입장도 가능합니다.
+						하지만 개인 스케줄 상 요일별로 입장 시간이 다르게 이용도 가능합니다.
+					</dd>
+
+					<!--<dt>Q. 시간변경이 필요하거나 결석을 하게 되면 어떻게 하면 되나요?</dt>
+				<dd>
+					<span>●</span>당일에 부득이 입장 시간의 변경이 필요할 경우나 결석할 경우 쌤하고 고객센터로 문자 보내주시면 됩니다.
+					주 3회 이용 고객의 경우 결석시에 다른 요일로 변경하여 이용 가능합니다.
+					주 5회 매일반의 경우는 그냥 결석처리 됩니다.
+				</dd>-->
+
+					<dt>Q. 쌤하고 숙제하는 시간에 아이가 모르는 문제나 내용을 질문하면 가르쳐 주시나요?</dt>
+					<dd>
+						<span>●</span>쌤하고 숙제관리 서비스는 교과에 관한 질문에 대해 설명을 해주거나 가르쳐 주지 않습니다.
+						쌤하고 쌤은 학생이 약속한 시간에 입장하는지 관리하고 자기 공부 계획을 제대로 입력했는지 체크하고 숙제를 하는 동안 외롭지 않게 지켜봐주는 역할을 합니다.
+						대신 학생이 공부를 하면서 발생하는 어려운 문제나 이해가 안되는 부분들을 질문하면 체크해 두었다가 학교나 학원의 해당 과제를 내주신 선생님께 질문하도록 지도합니다.
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>
+			(주) 리얼스터디 | 대표자 문현경 | 주소 서울시 금천구 가산디지털2로 173, 323호 | 문의 02-6263-0982<br/>
+			개인정보관리책임자 문현경 | 사업자 등록번호 636-86-03095 | 통신판매업신고 제 2023-서울금천-2115호
+		</p>
+		<p>Copyright @Real-study All Reserved</p>
+	</footer>
+</div>
+<script>
+
+function chatChannel() {
+	Kakao.Channel.chat({
+		channelPublicId: '_QAKRn',
+	});
+}
+/*********************************************
+ * 원페이지 영역 이동
+ ********************************************/
+function fn_move(param, moveId){
+	// 모바일 메뉴 숨기기
+	hideMenu();
+
+	// $("[name=menu]").removeClass("active");
+
+	if(moveId){
+		let offset = $("#" + moveId).offset();
+		$('html, body').animate({ scrollTop: offset.top }, 1000);
+	}
+
+	// $(param).parent().addClass("active");
+}
+
+/*********************************************
+ * 신청하기 이동
+ ********************************************/
+function fn_applyIntro(){
+	window.open("https://forms.gle/HRLrrSLi78x5TqeX6");
+}
+
+/*********************************************
+ * 쌤하고 이동
+ ********************************************/
+function fn_semhagoIntro(){
+	window.open('about:blank').location.href = "https://app.samhago.com";
+}
+
+/*********************************************
+ * 쌤하고 회원가입 이동
+ ********************************************/
+function fn_semhagoJoin() {
+	window.open('about:blank').location.href = "https://app.samhago.com/webpolicy/selectPolicyIntro.do";
+}
+
+/*********************************************
+ * content1 배너 스와이퍼
+ ********************************************/
+const bannerSwiper = new Swiper('.bannerSwiper', {
+	direction: 'vertical',
+	loop: true,
+	autoplay: true,
+	direction: 'horizontal',
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+		clickable: true,
+	}
+});
+
+/*********************************************
+ * 모바일 메뉴 OPEN
+ ********************************************/
+function openMenu(){
+	$('.header_nav').toggleClass('open');
+	$('body').toggleClass('on');
+}
+
+function hideMenu() {
+	$(".header_nav").removeClass("open");
+	$("body").removeClass("on");
+}
+
+$(document).mouseup(function (e){
+	let LayerPopup = $("header");
+	if(LayerPopup.has(e.target).length === 0){
+		hideMenu();
+	}
+});
+</script>
+</body>
+</html>

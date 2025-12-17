@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lagn="ko"
+	  xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>error</title> 
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="/bootstrap/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="/bootstrap/bootstrap-3.4.1-dist/css/bootstrap-theme.min.css">
+
+<!-- font awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- 적용 css -->
+<link rel="stylesheet" href="/css/admin/error.css">
+<link rel="stylesheet" href="/css/admin/common.css">
+
+<script src="/js/web/jquery.min.js"></script>
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="/bootstrap/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body class="body_layout">
+	<!-- 네비 메뉴 -->
+	<div class="header">
+		<div class="gnb container">
+			<div id="header">
+				<div class="insideWrap">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- error -->
+	<div class="error container" id="body">
+		<div class="normal">
+			<p class="font-title1 bd title tac">Error<img src="/image/home/icon5.png"></p>
+			<p class="font-title5 title tac">요청하신 페이지를 찾을수 없습니다.<br>입력하신 주소가 정확한지 다시 한번 확인해주세요.</p>
+			<a onclick="history.back();"><p class="font-title4 bd title tac btn">이전페이지로 돌아가기</p></a>
+			<div class="img"><img src="/image/home/error_img.png"></div>
+		</div>
+	</div>
+
+
+	<!-- 하단 -->
+	<div class="footer"></div>
+</body> 
+
+<script>
+$(function() {
+	$(window).resize(function() {
+		screenSize();
+	});
+	
+	$('[name = "scrollTop"]').click(function() {
+		$('html, body').animate({
+			scrollTop : 0
+		}, 400);
+		return false;
+	});
+});
+</script>
+
+<script>
+	$(document).ready(function(){
+		screenSize();
+	});
+	
+	//모바일 화면일시 배너 크기 조정
+	function screenSize(){
+		//화면 너비
+		var windowWidth = $( window ).width();
+		//창 가로 크기가 500 미만일 경우
+		if(windowWidth > 769){
+			//화면 높이
+			var innerHeight = window.innerHeight;
+			
+			$("#body").css("height",innerHeight-80);
+		}else{
+			//화면 높이
+			var innerHeight = window.innerHeight;
+			
+			$("#body").css("height",innerHeight-60);
+		}
+			
+	}
+
+</script>
