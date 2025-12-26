@@ -72,12 +72,12 @@
 </script>-->
 
 
-<body>
+<body onload="window.scrollTo(0,0)">
 <div class="project_wrap">
 	<header>
 		<div class="header_nav">
 			<div class="header_btm">
-                <a class="logo" href="../"><img src="../image/top_logo.svg" alt="logo"></a>
+                <a class="logo" href=""><img src="../image/top_logo.svg" alt="logo"></a>
 				<ul>
 					<li class="pc" name="menu"><a onclick="fn_move(this, 'banner1')" class="active">쌤하고</a></li>
 					<li class="pc" name="menu"><a onclick="fn_move(this, 'banner2')">쌤하고 시스템</a></li>
@@ -103,7 +103,7 @@
             <div><h1>올곧은 공부습관</h1><img src="../image/content1_samhago.svg" alt="쌤하고"></div>
             <p class="pc">엄마 대신, 아이의 공부방에 찾아가는 실시간 공부습관 코칭 서비스</p>
             <p class="mb">엄마 대신, 아이의 공부방에 찾아가는<br>실시간 공부습관 코칭 서비스</p>
-            <button>무료 체험 신청하기 <img src="../image/arrow.svg" alt="페이지 이동"></button>
+            <button onclick="fn_applyIntro()">무료 체험 신청하기 <img src="../image/arrow.svg" alt="페이지 이동"></button>
 		</div>
 		<div class="con_box">
             <img class="pc" src="../image/content1_banner.png" alt="메인배너 이미지">
@@ -111,6 +111,8 @@
 		</div>
 	</div>
 	<div class="content2"><!-- 혼자 하기 어려운 자기주도학습 ~ -->
+        <img class="background_blue" src="../image/background_blue.png" alt="뒷배경">
+        <img class="background_yellow" src="../image/background_yellow.png" alt="뒷배경">
 		<div class="con_box">
             <p class="con2_p con2_p1">혼자 하기 어려운 <span class="gradient">자기주도학습</span>,<br>쌤과 함께라면 가능합니다.</p>
             <p class="con2_p con2_p2 pc">학교와 학원에서는 성실한데<br>왜 우리아이는 집에서 공부가 어려울까요?</p>
@@ -120,13 +122,13 @@
                     <li><img src="../image/content2_face1.svg" alt="무얼 할지 모르는 표정"><p>무엇을 해야 할지 모릅니다</p>
                         <span>학교 숙제, 학원 숙제, 교과서 복습<br>해야 할 건 많은데 뭐부터 해야 할지 막막합니다.<br><br> "엄마, 오늘 뭐 해야 돼?"<br> 결국 엄마가 리스트를 만들어주고<br>우선순위를 정해줘야 합니다.</span>
                     </li>
-                    <li><img src="../image/content2_face2.svg" alt="어려워하는 표정"><p></p>
+                    <li><img src="../image/content2_face2.svg" alt="어려워하는 표정"><p>혼자서는 시작이 어렵습니다</p>
                         <span>책상에 앉아도 핸드폰만 보고,<br>연필을 잡아도 시작을 못 합니다.<br><br>"조금만 도와줘…"<br>엄마가 옆에 앉아야 겨우 시작합니다.</span>
                     </li>
-                    <li><img src="../image/content2_face3.svg" alt="집중하지 못하는 표정"><p></p>
+                    <li><img src="../image/content2_face3.svg" alt="집중하지 못하는 표정"><p>집중이 오래 가지 않습니다</p>
                         <span>시작은 하는데 5분 만에 딴짓<br>화장실 갔다 오고, 물 마시러 가고,<br>30분 공부에 2시간이 걸립니다.<br><br>엄마가 계속 "집중해!"라고 말해줘야<br>겨우 한 문제를 풉니다.</span>
                     </li>
-                    <li><img src="../image/content2_face4.svg" alt="화난 표정"><p></p>
+                    <li><img src="../image/content2_face4.svg" alt="화난 표정"><p>결국 엄마와 아이, 둘 다 지칩니다</p>
                         <span>"숙제 했어?"<br>"조금만 도와줘…"<br><br>매일 저녁, 같은 대화가 반복되고<br>엄마는 화가 나고, 아이는 짜증이 나고,<br>결국 싸움으로 끝이 납니다.<br><br>이렇게 계속할 수는 없습니다.</span>
                     </li>
                 </ul>
@@ -200,7 +202,7 @@
                         <h2>엄마도 아이도<br>스트레스를 줄이고<br><span style="color:#57C37E">관계는 더 좋아집니다</span></h2>
                         <p>공부 때문에 매일 다투던 저녁이 사라졌어요.<br>- 초4 학부모 윤OO님</p>
                     </div>
-                    <div class="con4_slider_right"><div class="background" style="background-color: #6BDE94"></div><img class="con4_slider_img3" src="../image/content4_bigImg3.svg" alt="img3"></div>
+                    <div class="con4_slider_right"><div class="background" style="background-color: #6BDE94"></div><img class="con4_slider_img3" src="../image/content4_bigImg3.png" alt="img3"></div>
                 </li>
                 <li class="con4_slider con4_slider1">
                     <div class="con4_slider_left">
@@ -209,7 +211,7 @@
                         <p class="pc">매일 반복되는 숙제확인, 계획짜주기, 집중유도하기, 시간 재기<br>이 모든것을 쌤하고가 코칭합니다.</p>
                         <p class="mb">매일 반복되는 숙제확인, 계획짜주기,<br>집중유도하기, 시간 재기<br>이 모든것을 쌤하고가 코칭합니다.</p>
                     </div>
-                    <div class="con4_slider_right"><div class="background" style="background-color: #C4886B"></div><img class="con4_slider_img1" src="../image/content4_bigImg1.svg" alt="img1"></div>
+                    <div class="con4_slider_right"><div class="background" style="background-color: #C4886B"></div><img class="con4_slider_img1" src="../image/content4_bigImg1.png" alt="img1"></div>
                 </li>
                 <li class="con4_slider con4_slider2">
                     <div class="con4_slider_left">
@@ -217,14 +219,14 @@
                         <h2 class="mb">아이는 스스로 계획하고,<br><span style="color:#F2B819">스스로 해내는 경험</span></h2>
                         <p>쌤하고는 매일 '작은 성공 경험'을 만들어<br>자존감 상승 구조를 형성합니다.</p>
                     </div>
-                    <div class="con4_slider_right"><div class="background" style="background-color: #F2B819"></div><img class="con4_slider_img2" src="../image/content4_bigImg2.svg" alt="img2"></div>
+                    <div class="con4_slider_right"><div class="background" style="background-color: #F2B819"></div><img class="con4_slider_img2" src="../image/content4_bigImg2.png" alt="img2"></div>
                 </li>
                 <li class="con4_slider con4_slider3">
                     <div class="con4_slider_left">
                         <h2>엄마도 아이도<br>스트레스를 줄이고<br><span style="color:#57C37E">관계는 더 좋아집니다</span></h2>
                         <p>공부 때문에 매일 다투던 저녁이 사라졌어요.<br>- 초4 학부모 윤OO님</p>
                     </div>
-                    <div class="con4_slider_right"><div class="background" style="background-color: #6BDE94"></div><img class="con4_slider_img3" src="../image/content4_bigImg3.svg" alt="img3"></div>
+                    <div class="con4_slider_right"><div class="background" style="background-color: #6BDE94"></div><img class="con4_slider_img3" src="../image/content4_bigImg3.png" alt="img3"></div>
                 </li>
                 <!--슬라이드 클론-->
                 <li class="con4_slider con4_slider1">
@@ -234,7 +236,7 @@
                         <p class="pc">매일 반복되는 숙제확인, 계획짜주기, 집중유도하기, 시간 재기<br>이 모든것을 쌤하고가 코칭합니다.</p>
                         <p class="mb">매일 반복되는 숙제확인, 계획짜주기,<br>집중유도하기, 시간 재기<br>이 모든것을 쌤하고가 코칭합니다.</p>
                     </div>
-                    <div class="con4_slider_right"><div class="background" style="background-color: #C4886B"></div><img class="con4_slider_img1" src="../image/content4_bigImg1.svg" alt="img1"></div>
+                    <div class="con4_slider_right"><div class="background" style="background-color: #C4886B"></div><img class="con4_slider_img1" src="../image/content4_bigImg1.png" alt="img1"></div>
                 </li>
 
             </ul>
@@ -266,6 +268,7 @@
 		</div>
 	</div>
 	<div class="content5"><!-- 기술이 루틴을 만들고 ~ -->
+        <img class="background_yellow" src="../image/background_yellow.png" alt="뒷배경">
 		<div class="header_box">
             <h2 class="pc">기술이 루틴을 만들고,<br>쌤은 그 루틴을 <span class="gradient">아이의 성장</span>으로 연결합니다</h2>
             <h2 class="mb">기술이 루틴을 만들고,<br>쌤은 그 루틴을<br><span class="gradient">아이의 성장</span>으로<br>연결합니다</h2>
@@ -318,11 +321,12 @@
                     <li class="mb"><div><img src="../image/content5_check.svg" alt="체크아이콘"><p>1:1 자기주도학습<br>전문 코치 상담권</p></div><span>10만원 상당</span></li>
                     <li class="mb"><div><img src="../image/content5_check.svg" alt="체크아이콘"><p>문해력·어휘력 학습 프로그램<br>세븐브릭스 무료 사용권</p></div><span>6만원 상당</span></li>
                 </ul>
-                <button>1주 무료체험 신청하기<img src="../image/arrow.svg" alt="1주 무료체험 신청하기"></button>
+                <button onclick="fn_applyIntro()">1주 무료체험 신청하기<img src="../image/arrow.svg" alt="1주 무료체험 신청하기"></button>
             </div>
 		</div>
 	</div>
 	<div class="content6" id="banner3"><!-- (#자기주도학습) -->
+        <img class="background_brown" src="../image/background_brown.png" alt="뒷배경">
 		<div class="header_box">
             <h2 class="pc">상위권 학생들의 필수 역량<br>자기주도학습</h2>
             <h2 class="mb">상위권 학생들의<br>필수 역량<br>자기주도학습</h2>
@@ -352,26 +356,26 @@
                     <div><img src="../image/top_scroll.svg" alt="진행방향"></div>
                 </div>
                 <ul>
-                    <li class="event_card card1 pc"><div class="event_card_inner"><h5>화상 플랫폼 입장</h5><p>약속된 시간에 쌤하고로 입장하여<br>집중 환경을 조성합니다.</p><div><img src="../image/content7_img1.svg" alt="아이콘1"></div></div></li>
-                    <li class="event_card card2 pc"><div class="event_card_inner"><h5>스스로 계획</h5><p>오늘 할 공부를 아이가<br>직접 정하고 쌤하고와 공유합니다.</p><div><img src="../image/content7_img2.svg" alt="아이콘2"></div></div></li>
-                    <li class="event_card card3 pc"><div class="event_card_inner"><h5>스스로 공부</h5><p>정해진 시간 동안 쌤하고와 함께<br>몰입하여 PLAN을 실행합니다.</p><div><img src="../image/content7_img3.svg" alt="아이콘3"></div></div></li>
-                    <li class="event_card card4 pc"><div class="event_card_inner"><h5>스스로 점검</h5><p>계획 달성 여부를 직접 확인하며<br>메타인지를 키웁니다.</p><div><img src="../image/content7_img4.svg" alt="아이콘4"></div></div></li>
-                    <li class="event_card card5 pc"><div class="event_card_inner"><h5>학습 리포트 전송</h5><p>정리된 학습 리포트가<br>부모님께 자동 전달됩니다.</p><div><img src="../image/content7_img5.svg" alt="아이콘5"></div></div></li>
+                    <li class="event_card card1 pc"><div class="event_card_inner"><h5>화상 플랫폼 입장</h5><p>약속된 시간에 쌤하고로 입장하여<br>집중 환경을 조성합니다.</p><div><img src="../image/content7_img1.png" alt="아이콘1"></div></div></li>
+                    <li class="event_card card2 pc"><div class="event_card_inner"><h5>스스로 계획</h5><p>오늘 할 공부를 아이가<br>직접 정하고 쌤하고와 공유합니다.</p><div><img src="../image/content7_img2.png" alt="아이콘2"></div></div></li>
+                    <li class="event_card card3 pc"><div class="event_card_inner"><h5>스스로 공부</h5><p>정해진 시간 동안 쌤하고와 함께<br>몰입하여 PLAN을 실행합니다.</p><div><img src="../image/content7_img3.png" alt="아이콘3"></div></div></li>
+                    <li class="event_card card4 pc"><div class="event_card_inner"><h5>스스로 점검</h5><p>계획 달성 여부를 직접 확인하며<br>메타인지를 키웁니다.</p><div><img src="../image/content7_img4.png" alt="아이콘4"></div></div></li>
+                    <li class="event_card card5 pc"><div class="event_card_inner"><h5>학습 리포트 전송</h5><p>정리된 학습 리포트가<br>부모님께 자동 전달됩니다.</p><div><img src="../image/content7_img5.png" alt="아이콘5"></div></div></li>
                     <li class="event_card card1 mb"><div class="event_card_inner">
                         <div><h5>화상 플랫폼 입장</h5><p>약속된 시간에 쌤하고로<br>입장하여 집중 환경을<br>조성합니다.</p></div>
-                        <div><img src="../image/content7_img1.svg" alt="아이콘1"></div></div></li>
+                        <div><img src="../image/content7_img1.png" alt="아이콘1"></div></div></li>
                     <li class="event_card card2 mb"><div class="event_card_inner">
                         <div><h5>스스로 계획</h5><p>오늘 할 공부를 아이가<br>직접 정하고 쌤하고와<br>공유합니다.</p></div>
-                        <div><img src="../image/content7_img2.svg" alt="아이콘2"></div></div></li>
+                        <div><img src="../image/content7_img2.png" alt="아이콘2"></div></div></li>
                     <li class="event_card card3 mb"><div class="event_card_inner">
                         <div><h5>스스로 공부</h5><p>정해진 시간 동안<br>쌤하고와 함께 몰입하여<br>PLAN을 실행합니다.</p></div>
-                        <div><img src="../image/content7_img3.svg" alt="아이콘3"></div></div></li>
+                        <div><img src="../image/content7_img3.png" alt="아이콘3"></div></div></li>
                     <li class="event_card card4 mb"><div class="event_card_inner">
                         <div><h5>스스로 점검</h5><p>계획 달성 여부를 직접<br>확인하며 메타인지를<br>키웁니다.</p></div>
-                        <div><img src="../image/content7_img4.svg" alt="아이콘4"></div></div></li>
+                        <div><img src="../image/content7_img4.png" alt="아이콘4"></div></div></li>
                     <li class="event_card card5 mb"><div class="event_card_inner">
                         <div><h5>학습 리포트 전송</h5><p>정리된 학습 리포트가<br>부모님께 자동<br>전달됩니다.</p></div>
-                        <div><img src="../image/content7_img5.svg" alt="아이콘5"></div></div></li>
+                        <div><img src="../image/content7_img5.png" alt="아이콘5"></div></div></li>
                 </ul>
             </div>
             <h3 class="pc" style="text-align: center;">오늘 우리 아이가 뭘 공부했는지, 한눈에 확인하세요.</h3>
@@ -418,32 +422,71 @@
                 <h4 class="pc">자기주도학습 초기 단계는 <span style="color:#32CD8B">1시간 공부</span>보다<br>스스로 시작하고 끝내는 경험이 더 중요합니다.<br>쌤하고는 그 <span style="color:#F2B819">첫 단추</span>를 잡아줍니다.</h4>
                 <h4 class="mb">자기주도학습 초기 단계는<br><span style="color:#32CD8B">1시간 공부</span>보다 스스로 시작하고<br>끝내는 경험이 더 중요합니다.<br>쌤하고는 그 <span style="color:#F2B819">첫 단추</span>를 잡아줍니다.</h4>
             </div>
-            <div class="right_slider">
-                <h3 class="pc">먼저 경험한 학부모님들의 생생한 후기</h3>
-                <h3 class="mb">먼저 경험한<br>학부모님들의 생생한 후기</h3>
-                <ul>
-                    <li class="event_slider con7_slider1">
-                        <p>우리 아이가 처음으로 스스로 공부를 시작했어요.</p>
-                        <div style="background: #FFE59D10;"><img src="../image/content7_icon1.svg" alt="아이콘"></div>
-                        <p>맞벌이라 애들 공부 챙기기 힘들었는데 완전 바뀌었어요.</p>
-                        <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt="아이콘"></div>
-                        <p>매일 반복되는 루틴이 아이를 변화시킵니다.</p>
-                    </li>
-                    <li class="event_slider con7_slider2">
-                        <p>플래너→체크 루틴 덕분에 아이가 공부를 본인이 정리해요.</p>
-                        <p>제 시간에 혼자 앉아서 공부를 했어요!</p>
-                        <div style="background: #06B6FF10;"><img src="../image/content7_icon3.svg" alt="아이콘"></div>
-                        <p>아이에게 숙제 잔소리 하지 않게 되어 너무 좋아요!</p>
-                    </li>
-                    <li class="event_slider con7_slider3">
-                        <p>매일 반복되는 루틴이 아이를 변화시킵니다.</p>
-                        <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt="아이콘"></div>
-                        <p>매일 같은 시간에 자동으로 시작하니까 이제는 잔소리가 필요 없어요.</p>
-                        <div style="background: #FFE59D10;"><img src="../image/content7_icon1.svg" alt="아이콘"></div>
-                        <p>매일 반복되는 루틴이 아이를 변화시킵니다.</p>
-                    </li>
-                </ul>
-            </div>
+        <div class="right_slider">
+          <h3 class="pc">먼저 경험한 학부모님들의 생생한 후기</h3>
+          <h3 class="mb">먼저 경험한<br>학부모님들의 생생한 후기</h3>
+        
+          <!-- line 1 -->
+          <div class="rolling">
+            <ul class="track">
+              <li class="event_slider">
+                <p>우리 아이가 처음으로 스스로 공부를 시작했어요.</p>
+                <div style="background: #FFE59D10;"><img src="../image/content7_icon1.svg" alt=""></div>
+                <p>맞벌이라 애들 공부 챙기기 힘들었는데 완전 바뀌었어요.</p>
+                <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt=""></div>
+                <p>매일 반복되는 루틴이 아이를 변화시킵니다.</p>
+                <p>우리 아이가 처음으로 스스로 공부를 시작했어요.</p>
+                <div style="background: #FFE59D10;"><img src="../image/content7_icon1.svg" alt=""></div>
+                <p>맞벌이라 애들 공부 챙기기 힘들었는데 완전 바뀌었어요.</p>
+                <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt=""></div>
+                <p>매일 반복되는 루틴이 아이를 변화시킵니다.</p>
+              </li>
+            </ul>
+          </div>
+      
+          <!-- line 2 -->
+          <div class="rolling delay">
+            <ul class="track">
+              <li class="event_slider">
+                <p>플래너→체크 루틴 덕분에 아이가 공부를 정리해요.</p>
+                <p>제 시간에 혼자 앉아서 공부했어요!</p>
+                <div style="background: #06B6FF10;"><img src="../image/content7_icon3.svg" alt=""></div>
+                <p>숙제 잔소리를 안 하게 됐어요.</p>
+                <div style="background: #06B6FF10;"><img src="../image/content7_icon3.svg" alt=""></div>
+                <p>제 시간에 혼자 앉아서 공부했어요!</p>
+                <p>플래너→체크 루틴 덕분에 아이가 공부를 정리해요.</p>
+                <p>제 시간에 혼자 앉아서 공부했어요!</p>
+                <div style="background: #06B6FF10;"><img src="../image/content7_icon3.svg" alt=""></div>
+                <p>숙제 잔소리를 안 하게 됐어요.</p>
+                <div style="background: #06B6FF10;"><img src="../image/content7_icon3.svg" alt=""></div>
+                <p>제 시간에 혼자 앉아서 공부했어요!</p>
+                <div style="background: #06B6FF10;"><img src="../image/content7_icon3.svg" alt=""></div>
+              </li>
+            </ul>
+          </div>
+      
+          <!-- line 3 -->
+          <div class="rolling slow">
+            <ul class="track">
+              <li class="event_slider">
+                <p>매일 같은 시간에 자동으로 시작해요.</p>
+                <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt=""></div>
+                <p>이제는 잔소리가 필요 없어요.</p>
+                <div style="background: #FFE59D10;"><img src="../image/content7_icon1.svg" alt=""></div>
+                <p>매일 반복되는 루틴의 힘!</p>
+                <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt=""></div>
+                <p>이제는 잔소리가 필요 없어요.</p>
+                <p>매일 같은 시간에 자동으로 시작해요.</p>
+                <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt=""></div>
+                <p>이제는 잔소리가 필요 없어요.</p>
+                <div style="background: #FFE59D10;"><img src="../image/content7_icon1.svg" alt=""></div>
+                <p>매일 반복되는 루틴의 힘!</p>
+                <div style="background: #B5856F10;"><img src="../image/content7_icon2.svg" alt=""></div>
+                <p>이제는 잔소리가 필요 없어요.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
 
 		</div>
 	</div>
@@ -451,8 +494,24 @@
 		<div class="con_box">
             <div class="bluebox">
                 <img src="../image/big_heart_blue.svg" alt="하트배경">
-                <h4>쌤하고와 함께면<br>아이의 공부습관이 달라집니다</h4>
-                <div><p>3개월 이용권</p><h3>480,000원</h3><span>월 160,000원 / 주 40,000원<br>(하루 약 5,700원)</span></div>
+                <h4>쌤하고와 함께하면<br>아이의 공부습관이 달라집니다</h4>
+                <!-- 인스타 공구 이전 -->
+                <div><p>3개월 이용권</p><h3>480,000원</h3><span>월 160,000원 / 주 40,000원<br>(하루 약 5,700원)</span></div> 
+                <!-- 인스타 공구 이후 -->
+                <!-- <div class="price">
+                    <div>
+                        <span class="price_top_span">인플루언서 공구 혜택</span>
+                        <p>1개월 패키지</p>
+                        <div><h4>160,000원</h4></div>
+                        <button onclick="fn_payment()">바로 구매하기</button>
+                    </div>
+                    <div>
+                        <span class="price_top_span">습관이 몸에 배는 기적</span>
+                        <p>3개월 패키지 <span class="price_off">(10% OFF)</span></p>
+                        <div><span class="price_normal">480,000원</span><h4>432,000원</h4></div>
+                        <button onclick="fn_payment()">바로 구매하기</button>
+                    </div>
+                </div> -->
                 <ul>
                     <li class="pc"><h5>학부모가 하루 1시간<br>절약되는 가치 포함</h5><p>매일 저녁 숙제 체크, 계획 짜기<br>집중 유도에 쓰던 시간<br>한 달 30시간, 3개월 90시간 절약</p></li>
                     <li class="pc"><h5>학원 한 과목보다 적은<br>비용으로 더 큰 변화 경험</h5><p>일반 학원 주 2회 월 20~30만원<br>쌤하고 주 5일 월 16만원</p></li>
@@ -461,7 +520,7 @@
                     <li class="mb"><h5>학원 한 과목보다 적은 비용으로<br>더 큰 변화 경험</h5><p>일반 학원 주 2회 월 20~30만원<br>쌤하고 주 5일 월 16만원</p></li>
                     <li class="mb"><h5>평생 쓸 공부 습관이라는 무형의 가치</h5><p>3개월 투자로 초등학생를 넘어<br>고등학생 때까지 쓸 자기주도학습 루틴 완성</p></li>
                 </ul>
-                <button>1주 무료체험 신청하기<img src="../image/arrow.svg" alt="1주 무료체험 신청하기"></button>
+                <button onclick="fn_applyIntro()">1주 무료체험 신청하기<img src="../image/arrow.svg" alt="1주 무료체험 신청하기"></button>
             </div>
 		</div>
 	</div>
@@ -592,7 +651,7 @@
             <div class="brownbox">
                 <h3>올곧은 공부습관은<br>하루 아침에 만들어지지 않습니다.</h3>
                 <p>하지만 매일 조금씩, 쌤과 함께라면 가능합니다.<br>지금 시작하세요.</p>
-                <button>1주 무료체험 신청하기<img src="../image/arrow.svg" alt="1주 무료체험 신청하기"></button>
+                <button onclick="fn_applyIntro()">1주 무료체험 신청하기<img src="../image/arrow.svg" alt="1주 무료체험 신청하기"></button>
             </div>
 		</div>
 	</div>
@@ -621,6 +680,8 @@
 </div>
 <script>
 let isProgrammaticScroll = false;
+let currentActiveSection = null;
+let scrollTimeout = null;
 function chatChannel() {
 	Kakao.Channel.chat({
 		channelPublicId: '_QAKRn',
@@ -630,34 +691,49 @@ function chatChannel() {
  * 원페이지 영역 이동
  ********************************************/
 function fn_move(param, moveId){
-	// 모바일 메뉴 숨기기
-	hideMenu();
+    // 모바일 메뉴 숨기기
+    hideMenu();
 
-	// $("[name=menu]").removeClass("active");
+    // 모든 메뉴 버튼에서 active 클래스 제거
+    $("[name=menu]").removeClass("active");
+    
+    // 현재 클릭한 버튼의 부모 li에 active 클래스 추가
+    $(param).parent().addClass("active");
+    
+    // 현재 활성화된 섹션 업데이트
+    currentActiveSection = moveId;
 
-	if(moveId){
-		// 프로그램에 의한 스크롤임을 표시
-		isProgrammaticScroll = true;
-		
-		let offset = $("#" + moveId).offset();
-		
-		// 애니메이션 없이 바로 이동
-		$('html, body').stop(true, true).scrollTop(offset.top - 161);
-		
-		// 짧은 딜레이 후 플래그 초기화
-		setTimeout(() => {
-			isProgrammaticScroll = false;
-		}, 100);
-	}
-
-	// $(param).parent().addClass("active");
+    if(moveId){
+        // 프로그램에 의한 스크롤임을 표시
+        isProgrammaticScroll = true;
+        
+        let offset = $("#" + moveId).offset();
+        
+        if (offset) {
+            // 애니메이션 없이 바로 이동
+            if(moveId == 'banner5'){
+                $('html, body').stop(true, true).scrollTop(offset.top - 81);
+            }else{
+                $('html, body').stop(true, true).scrollTop(offset.top - 161);
+            }
+            
+            // URL 해시 업데이트 부분 제거! (아래 라인 삭제)
+            // history.replaceState(null, null, '#' + moveId);
+        }
+        
+        // 짧은 딜레이 후 플래그 초기화
+        setTimeout(() => {
+            isProgrammaticScroll = false;
+        }, 100);
+    }
 }
 
 /*********************************************
  * 신청하기 이동
  ********************************************/
 function fn_applyIntro(){
-	window.open("https://forms.gle/HRLrrSLi78x5TqeX6");
+	// window.open("https://forms.gle/HRLrrSLi78x5TqeX6");
+	window.open("https://app.samhago.com/webfreetrial/selectFreeTrialIntro.do");
 }
 
 /*********************************************
@@ -672,6 +748,13 @@ function fn_semhagoIntro(){
  ********************************************/
 function fn_semhagoJoin() {
 	window.open('about:blank').location.href = "https://app.samhago.com/webpolicy/selectPolicyIntro.do";
+}
+
+/*********************************************
+ * 쌤하고 회원가입 이동
+ ********************************************/
+function fn_payment() {
+	window.open("https://app.samhago.com/webpaymenthist/insertPaymentHistIntro.do");
 }
 
 /*********************************************
@@ -710,6 +793,179 @@ $(document).mouseup(function (e){
 });
 
 //퍼블 여기서부터 페이지 리뉴얼에 추가된 코드
+    $(window).on('scroll', function () {
+
+    });
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 400) {
+        $('.top_btn').addClass('active');   // 보이기
+    } else {
+        $('.top_btn').removeClass('active');   // 숨기기
+    }
+	// 프로그램에 의한 스크롤이 아닐 때만 실행
+	if (isProgrammaticScroll) return;
+	
+	// 디바운싱 적용
+	clearTimeout(scrollTimeout);
+	scrollTimeout = setTimeout(function() {
+		updateActiveMenuOnScroll();
+	}, 50);
+});
+
+// 스크롤 시 활성 메뉴 업데이트 함수
+function updateActiveMenuOnScroll() {
+	// 현재 스크롤 위치
+	let scrollTop = $(window).scrollTop() + 100; // 헤더 높이 고려 (100px 조정)
+	let windowHeight = $(window).height();
+	
+	let currentSection = null;
+	
+	// 모든 섹션 확인 (위에서 아래로 순차적으로 체크)
+	$('[id^="banner"]').each(function() {
+		let section = $(this);
+		let sectionId = section.attr('id');
+		let sectionTop = section.offset().top;
+		let sectionHeight = section.outerHeight();
+		
+		// 섹션의 상단 위치와 스크롤 위치 비교
+		// 현재 스크롤 위치가 섹션 상단보다 아래이고, 섹션 하단보다 위일 때
+		if (scrollTop >= sectionTop - 100 && scrollTop < sectionTop + sectionHeight - 100) {
+			currentSection = sectionId;
+			return false; // 첫 번째 매칭되는 섹션에서 중단
+		}
+	});
+	
+	// 섹션을 찾지 못한 경우 (페이지 최상단 또는 최하단)
+	if (!currentSection) {
+		// 첫 번째 섹션 체크 (페이지 최상단)
+		if (scrollTop < $('[id^="banner"]').first().offset().top) {
+			currentSection = $('[id^="banner"]').first().attr('id');
+		}
+		// 마지막 섹션 체크 (페이지 최하단)
+		else if (scrollTop >= $('[id^="banner"]').last().offset().top) {
+			currentSection = $('[id^="banner"]').last().attr('id');
+		}
+	}
+	
+	// 현재 섹션이 변경되었을 때만 업데이트
+	if (currentSection && currentSection !== currentActiveSection) {
+		currentActiveSection = currentSection;
+		
+		// 모든 메뉴 버튼에서 active 클래스 제거
+		$("[name=menu]").removeClass("active");
+		
+		// 해당 섹션에 맞는 메뉴 버튼 찾기 (정확한 매칭)
+		let found = false;
+		$("[name=menu] a").each(function() {
+			let onclickText = $(this).attr('onclick');
+			if (onclickText) {
+				// onclick 텍스트에서 banner ID 추출 (단순한 방법)
+				if (onclickText.includes("'" + currentSection + "'")) {
+					$(this).parent().addClass("active");
+					found = true;
+					return false; // 찾았으면 루프 종료
+				}
+			}
+		});
+		
+		// 메뉴를 찾지 못했으면 첫 번째 메뉴 활성화
+		if (!found) {
+			$("[name=menu]").first().addClass("active");
+		}
+		
+		// URL 해시 업데이트
+		// history.replaceState(null, null, '#' + currentSection);
+		
+		// 디버깅: 현재 활성화된 섹션 로그
+		console.log('현재 활성 섹션:', currentSection, '스크롤 위치:', scrollTop);
+	}
+}
+
+// 페이지 로드 시 초기 active 상태 설정
+$(document).ready(function() {
+	// 1. URL 해시 확인
+	let hash = window.location.hash;
+	if (hash) {
+		let sectionId = hash.replace('#', '');
+		if (sectionId && $('#' + sectionId).length) {
+			// 해시에 해당하는 섹션이 있으면 해당 메뉴 활성화
+			setActiveMenuForSection(sectionId);
+			
+			// 페이지 로드 후 약간의 지연 후 해당 섹션으로 스크롤
+			setTimeout(() => {
+				isProgrammaticScroll = true;
+				let offset = $('#' + sectionId).offset();
+				if (offset) {
+					$('html, body').scrollTop(offset.top - 161);
+				}
+				setTimeout(() => { 
+					isProgrammaticScroll = false; 
+					// 스크롤 후 다시 메뉴 업데이트
+					setTimeout(() => {
+						updateActiveMenuOnScroll();
+					}, 100);
+				}, 100);
+			}, 500);
+			return;
+		}
+	}
+	
+	// 2. 해시가 없으면 현재 스크롤 위치 기반으로 활성 메뉴 설정
+	setTimeout(() => {
+		updateActiveMenuOnScroll();
+	}, 100);
+});
+
+// 특정 섹션에 대한 메뉴 활성화 함수
+function setActiveMenuForSection(sectionId) {
+	// 모든 메뉴 버튼에서 active 클래스 제거
+	$("[name=menu]").removeClass("active");
+	
+	// 해당 섹션에 맞는 메뉴 버튼 찾기
+	let found = false;
+	$("[name=menu] a").each(function() {
+		let onclickText = $(this).attr('onclick');
+		if (onclickText && onclickText.includes("'" + sectionId + "'")) {
+			$(this).parent().addClass("active");
+			currentActiveSection = sectionId;
+			found = true;
+			return false;
+		}
+	});
+	
+	// 메뉴를 찾지 못했으면 첫 번째 메뉴 활성화
+	if (!found) {
+		$("[name=menu]").first().addClass("active");
+		currentActiveSection = 'banner1';
+	}
+}
+
+// resize 이벤트 처리
+$(window).on('resize', function() {
+	setTimeout(() => {
+		updateActiveMenuOnScroll();
+	}, 100);
+});
+
+// 디버깅 함수 - 섹션 위치 확인
+function debugSectionPositions() {
+	console.log('=== 섹션 위치 정보 ===');
+	let scrollTop = $(window).scrollTop();
+	console.log('현재 스크롤 위치:', scrollTop);
+	
+	$('[id^="banner"]').each(function() {
+		let section = $(this);
+		let sectionId = section.attr('id');
+		let sectionTop = section.offset().top;
+		let sectionHeight = section.outerHeight();
+		let sectionBottom = sectionTop + sectionHeight;
+		
+		console.log(sectionId + ':');
+		console.log('  상단:', sectionTop, '하단:', sectionBottom, '높이:', sectionHeight);
+		console.log('  스크롤이 섹션 상단보다', scrollTop - sectionTop, 'px 아래');
+		console.log('  스크롤이 섹션 하단보다', scrollTop - sectionBottom, 'px 아래');
+	});
+}
 ////////////////////////////////////////////////////////////////////////////4구역 양옆 수동 슬라이드
   const slides = document.querySelectorAll('.con4_slider');
   const total = slides.length;
@@ -825,6 +1081,25 @@ updateBlurred();
 setInterval(moveBox, INTERVAL);
 ////////////////////////////////////////////////////////////////////////////4구역 우 -> 좌 자동 슬라이드
 
+////////////////////////////////////////////////////////////////////////////7구역 좌 -> 우 자동 롤링
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.right_slider .track').forEach(track => {
+
+    track.innerHTML += track.innerHTML;
+
+    track.offsetHeight;
+
+    const contentWidth = track.scrollWidth / 2;
+    const speed = 70; // px per second
+    const duration = contentWidth / speed;
+
+    track.style.animationDuration = `${duration}s`;
+
+    track.style.animationPlayState = 'running';
+  });
+});
+////////////////////////////////////////////////////////////////////////////7구역 좌 -> 우 자동 롤링
+
 ////////////////////////////////////////////////////////////////////////////9구역 자주 묻는 질문 리스트
 $('.question_list li').on('click', function() {
     let $toggletxt = $(this).children('.toggletxt');
@@ -856,12 +1131,12 @@ gsap.registerPlugin(ScrollTrigger);
 const cards = gsap.utils.toArray(".event_card");
 
 // 데스크탑 환경에서만 타임라인 생성
-if (window.innerWidth > 768) {
+if (window.innerWidth > 985) {
   const cardTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: "#section7 ul",
       start: "center center+=100",
-      end: () => "+=" + (cards.length * 300),
+      end: () => "+=" + (cards.length * 120),
       pin: "#section7",
       scrub: true,
       anticipatePin: 1
@@ -907,11 +1182,11 @@ if (window.innerWidth > 768) {
 
 // 반응형 처리
 ScrollTrigger.matchMedia({
-  "(max-width: 768px)": () => {
+  "(max-width: 985px)": () => {
     $(".mb").show();
     $(".pc").hide();
   },
-  "(min-width: 769px)": () => {
+  "(min-width: 986px)": () => {
     $(".mb").hide();
     $(".pc").show();
   }
