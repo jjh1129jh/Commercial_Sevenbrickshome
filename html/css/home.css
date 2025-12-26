@@ -197,7 +197,7 @@ button {
 .project_wrap .content2 .con2_cards ul li {display: flex; padding: 50px 40px; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 20px;border-radius: 12px; background: #FFF; box-shadow: 8.051px 24.152px 89.45px -11.629px rgba(22, 52, 80, 0.10);}
 .project_wrap .content2 .con2_cards ul li img{width:64px;aspect-ratio: 1/1;}
 .project_wrap .content2 .con2_cards ul li p{color: #111; font-size: 22px; font-weight: 600; line-height: 140%; /* 30.8px */ letter-spacing: -0.22px;}
-.project_wrap .content2 .con2_cards ul li span{color: #666; font-size: 18px; font-weight: 400; line-height: 160%; /* 28.8px */ letter-spacing: -0.18px;}
+.project_wrap .content2 .con2_cards ul li span{color: #666; font-size: 18px; font-weight: 400; line-height: 160%; /* 28.8px */ letter-spacing: -0.18px;word-break: keep-all;}
 .project_wrap .content2 .con2_boxs {margin-top:40px;}
 .project_wrap .content2 .con2_boxs ul {width:870px;margin: 0 auto;position: relative;display: flex;justify-content: space-between;align-items: center;gap:20px;}
 .project_wrap .content2 .con2_boxs ul .box{
