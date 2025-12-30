@@ -874,6 +874,8 @@ function updateActiveMenuOnScroll() {
 		// URL 해시 업데이트
 		// history.replaceState(null, null, '#' + currentSection);
 		
+		// 디버깅: 현재 활성화된 섹션 로그
+		console.log('현재 활성 섹션:', currentSection, '스크롤 위치:', scrollTop);
 	}
 }
 
@@ -946,13 +948,18 @@ $(window).on('resize', function() {
 // 디버깅 함수 - 섹션 위치 확인
 function debugSectionPositions() {
 	let scrollTop = $(window).scrollTop();
-	
+
 	$('[id^="banner"]').each(function() {
 		let section = $(this);
 		let sectionId = section.attr('id');
 		let sectionTop = section.offset().top;
 		let sectionHeight = section.outerHeight();
 		let sectionBottom = sectionTop + sectionHeight;
+		
+		console.log(sectionId + ':');
+		console.log('  상단:', sectionTop, '하단:', sectionBottom, '높이:', sectionHeight);
+		console.log('  스크롤이 섹션 상단보다', scrollTop - sectionTop, 'px 아래');
+		console.log('  스크롤이 섹션 하단보다', scrollTop - sectionBottom, 'px 아래');
 	});
 }
 ////////////////////////////////////////////////////////////////////////////4구역 양옆 수동 슬라이드
@@ -1033,7 +1040,7 @@ function startAutoSlide() {
     if (autoSlideInterval) {
         clearInterval(autoSlideInterval);
     }
-    
+
     // 새 타이머 설정
     autoSlideInterval = setInterval(() => {
         moveNext();
@@ -1047,7 +1054,7 @@ const originalMovePrev = movePrev;
 moveNext = function() {
     // 타이머 리셋
     startAutoSlide();
-    
+
     // 원래 함수 실행
     return originalMoveNext();
 }
@@ -1055,7 +1062,7 @@ moveNext = function() {
 movePrev = function() {
     // 타이머 리셋
     startAutoSlide();
-    
+
     // 원래 함수 실행
     return originalMovePrev();
 }
@@ -1141,7 +1148,7 @@ function moveBox() {
 updateBlurred();
 
 setInterval(moveBox, INTERVAL);
-////////////////////////////////////////////////////////////////////////////5구역 우 -> 좌 자동 슬라이드
+////////////////////////////////////////////////////////////////////////////4구역 우 -> 좌 자동 슬라이드
 
 ////////////////////////////////////////////////////////////////////////////7구역 좌 -> 우 자동 롤링
 window.addEventListener('DOMContentLoaded', () => {
@@ -1196,10 +1203,10 @@ let animationsInitialized = false;
 
 // 모든 애니메이션 대상 요소에 초기 상태 적용 (content7 제외)
 function setInitialState() {
-    // content2부터 content10까지 모든 섹션에 초기 상태 적용 (content7 제외)
+    // content2부터 content10까지 모든 섹션에 초기 상태 적용
     for (let i = 2; i <= 10; i++) {
-        if (i === 7) continue; // content7 제외
-        
+        // 기존에 있던 if (i === 7) continue; 삭제함 -> 이제 7번도 포함됨
+
         const section = document.querySelector(`.content${i}`);
         if (section) {
             gsap.set(section, {
@@ -1208,7 +1215,7 @@ function setInitialState() {
             });
         }
     }
-    
+
     // content7 내부 요소들 중 imgbox, graybox, right_slider만 초기 상태 적용
     const content7Elements = document.querySelectorAll('.content7 .imgbox, .content7 .graybox, .content7 .right_slider');
     content7Elements.forEach(el => {
@@ -1223,25 +1230,25 @@ function initAllAnimations() {
     if (animationsInitialized) {
         ScrollTrigger.getAll().forEach(t => t.kill());
     }
-    
+
     // 초기 상태 설정 (content7 제외)
     setInitialState();
-    
+
     // 현재 화면 너비 확인
     const isDesktop = window.innerWidth > 985;
-    
+
     // ==================================================
     // 1. 먼저 일반 섹션 페이드인 애니메이션 생성 (content7 제외)
     // ==================================================
     // content2, content3, content4, content5, content6, content8, content9, content10
-    const regularSections = gsap.utils.toArray('.content2, .content3, .content4, .content5, .content6, .content8, .content9, .content10');
-    
+    const regularSections = gsap.utils.toArray('.content2, .content3, .content4, .content5, .content6, .content7, .content8, .content9, .content10');
+
     regularSections.forEach((section, index) => {
         const sectionClass = section.classList[1];
-        const isLateSection = sectionClass === 'content8' || 
-                              sectionClass === 'content9' || 
+        const isLateSection = sectionClass === 'content8' ||
+                              sectionClass === 'content9' ||
                               sectionClass === 'content10';
-        
+
         gsap.fromTo(section,
             {
                 opacity: 0,
@@ -1264,12 +1271,12 @@ function initAllAnimations() {
             }
         );
     });
-    
+
     // ==================================================
     // 2. event_card 애니메이션 - 데스크탑에서만
     // ==================================================
     const cards = gsap.utils.toArray(".event_card");
-    
+
     // 데스크탑 환경에서만 event_card 타임라인 생성
     if (isDesktop && cards.length > 0) {
         // event_card 초기 상태 설정
@@ -1279,15 +1286,15 @@ function initAllAnimations() {
                 gsap.set(inner, { y: 0 });
             }
         });
-        
+
         // event_card 타임라인 - Y축 이동만
         const cardTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: "#section7 ul",
                 start: "center 60%",
                 end: "center 30%",
-                pin: "#section7",
-                pinSpacing: true,
+                // pin: "#section7",
+                // pinSpacing: true,
                 scrub: 0.8,
                 anticipatePin: 1,
                 id: "event-cards-timeline",
@@ -1296,29 +1303,29 @@ function initAllAnimations() {
                 markers: false,
             }
         });
-        
+
         // 각 카드에 순차적 Y축 이동 애니메이션
         cards.forEach((card, index) => {
             const inner = card.querySelector(".event_card_inner");
             const delay = index * 0.8;
-            
+
             cardTimeline
-                .to(inner, { 
-                    y: -30, 
-                    duration: 0.4, 
+                .to(inner, {
+                    y: -30,
+                    duration: 0.4,
                     ease: "power2.out",
                 }, delay)
-                .to(inner, { 
-                    y: 0, 
-                    duration: 0.4, 
+                .to(inner, {
+                    y: 0,
+                    duration: 0.4,
                     ease: "power2.in",
                     delay: 0.2
                 }, delay + 0.4);
         });
-        
+
         // content7 내부 요소들 애니메이션 (imgbox, graybox, right_slider만)
         const content7Elements = gsap.utils.toArray('.content7 .imgbox, .content7 .graybox, .content7 .right_slider');
-        
+
         content7Elements.forEach((element, index) => {
             gsap.fromTo(element,
                 {
@@ -1342,49 +1349,37 @@ function initAllAnimations() {
                 }
             );
         });
-        
+
     } else if (!isDesktop) {
         // 모바일: 하이라이트 효과
         function highlightCenterCard() {
             const cards = document.querySelectorAll('.event_card');
             const viewportCenter = window.innerHeight / 2;
-            
+
             cards.forEach(card => {
                 const inner = card.querySelector('.event_card_inner');
                 if (inner) inner.style.border = 'none';
             });
-            
+
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
                 const cardCenter = rect.top + (rect.height / 2);
-                
+
                 if (Math.abs(cardCenter - viewportCenter) < 50) {
                     const inner = card.querySelector('.event_card_inner');
                     if (inner) inner.style.border = '1px solid rgba(22, 52, 80, 0.20)';
                 }
             });
         }
-        
+
         window.addEventListener('scroll', highlightCenterCard);
         setTimeout(highlightCenterCard, 100);
     }
-    
-    // ==================================================
-    // 3. content7 헤더 부분 애니메이션 (보이기만 하고 움직이지 않음)
-    // ==================================================
-    const content7Header = document.querySelector('.content7 .con_box > h3');
-    const content7Paragraph = document.querySelector('.content7 .con_box > p');
-    
-    if (content7Header && content7Paragraph) {
-        // content7 헤더는 이미 보이는 상태로 유지
-        gsap.set([content7Header, content7Paragraph], {
-            opacity: 1,
-            y: 0
-        });
-    }
-    
+
+
+
     animationsInitialized = true;
-    
+
     // ==================================================
     // 4. ScrollTrigger 정렬 및 갱신
     // ==================================================
@@ -1393,7 +1388,7 @@ function initAllAnimations() {
         ScrollTrigger.sort();
         ScrollTrigger.refresh();
     }
-    
+
     setTimeout(finalRefresh, 400);
 }
 
@@ -1403,7 +1398,7 @@ function initAllAnimations() {
 function handleResponsiveClasses() {
     const width = window.innerWidth;
     const isDesktop = width > 985;
-    
+
     if (isDesktop) {
         // PC 버전: .pc 보이기, .mb 숨기기
         $(".pc").show();
@@ -1421,13 +1416,13 @@ function handleResponsiveClasses() {
 $(document).ready(function() {
     // 1. 먼저 반응형 처리
     handleResponsiveClasses();
-    
+
     // 2. 초기 상태 설정 (content7 제외)
     setInitialState();
-    
+
     // 3. 애니메이션 초기화
     initAllAnimations();
-    
+
     // 4. 로드 완료 후 추가 처리
     $(window).on('load', function() {
         setTimeout(function() {
@@ -1447,25 +1442,25 @@ $(window).on('resize', function() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(function() {
         const newWidth = window.innerWidth;
-        
+
         // 너비가 경계선을 넘을 때만 다시 초기화
-        if ((currentWidth > 985 && newWidth <= 985) || 
+        if ((currentWidth > 985 && newWidth <= 985) ||
             (currentWidth <= 985 && newWidth > 985)) {
-            
+
             currentWidth = newWidth;
-            
+
             // 1. 반응형 클래스 업데이트
             handleResponsiveClasses();
-            
+
             // 2. 모든 ScrollTrigger 정리
             ScrollTrigger.getAll().forEach(t => t.kill());
-            
+
             // 3. 초기 상태 재설정 (content7 제외)
             setInitialState();
-            
+
             // 4. 애니메이션 재초기화
             initAllAnimations();
-            
+
             // 5. 추가 갱신
             setTimeout(function() {
                 ScrollTrigger.refresh();
