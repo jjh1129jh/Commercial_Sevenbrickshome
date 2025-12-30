@@ -1390,6 +1390,19 @@ button {
   font-weight: 600;
 }
 
+
+.project_wrap .content7 .con_box > h3,
+.project_wrap .content7 .con_box > p,
+.project_wrap .content7 .con_box > .imgbox,
+.project_wrap .content7 .con_box > .graybox,
+.project_wrap .content7 .con_box > .right_slider {
+    position: relative !important;
+    z-index: 50 !important;
+    background-color: #fff;
+}
+
+
+
 /* section7 기본 레이아웃 */
 .project_wrap .content7 .con_box #section7 {
   margin-top: 60px;
@@ -1426,7 +1439,7 @@ button {
 }
 
 .project_wrap .content7 .con_box #section7 ul .event_card {
-  width: 336px;
+  width: 25%;
   height: 482px;
   display: flex;
   justify-content: center;
@@ -2367,7 +2380,9 @@ td {
   }
 
   .project_wrap .content7 .con_box #section7>.progress_cirlce {
-    gap: 312px;
+    gap: 17.2%;
+      justify-content: center;
+      width: 100%;
   }
 }
 
@@ -2521,7 +2536,7 @@ td {
   }
 
   .project_wrap .content7 .con_box #section7 ul .event_card {
-    width: 672px;
+    width: 100%;
     height: 964px;
     display: flex;
     justify-content: center;
@@ -3659,6 +3674,7 @@ td {
     position: relative;
     margin-bottom: 200px;
   }
+
 
   .project_wrap .content7 .con_box #section7>h3 {
     font-size: 24px;

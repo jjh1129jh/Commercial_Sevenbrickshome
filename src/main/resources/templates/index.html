@@ -1143,7 +1143,7 @@
     updateBlurred();
 
     setInterval(moveBox, INTERVAL);
-    ////////////////////////////////////////////////////////////////////////////5구역 우 -> 좌 자동 슬라이드
+    ////////////////////////////////////////////////////////////////////////////4구역 우 -> 좌 자동 슬라이드
 
     ////////////////////////////////////////////////////////////////////////////7구역 좌 -> 우 자동 롤링
     window.addEventListener('DOMContentLoaded', () => {
@@ -1198,9 +1198,9 @@
 
     // 모든 애니메이션 대상 요소에 초기 상태 적용 (content7 제외)
     function setInitialState() {
-        // content2부터 content10까지 모든 섹션에 초기 상태 적용 (content7 제외)
+        // content2부터 content10까지 모든 섹션에 초기 상태 적용
         for (let i = 2; i <= 10; i++) {
-            if (i === 7) continue; // content7 제외
+            // 기존에 있던 if (i === 7) continue; 삭제함 -> 이제 7번도 포함됨
 
             const section = document.querySelector(`.content${i}`);
             if (section) {
@@ -1236,7 +1236,7 @@
         // 1. 먼저 일반 섹션 페이드인 애니메이션 생성 (content7 제외)
         // ==================================================
         // content2, content3, content4, content5, content6, content8, content9, content10
-        const regularSections = gsap.utils.toArray('.content2, .content3, .content4, .content5, .content6, .content8, .content9, .content10');
+        const regularSections = gsap.utils.toArray('.content2, .content3, .content4, .content5, .content6, .content7, .content8, .content9, .content10');
 
         regularSections.forEach((section, index) => {
             const sectionClass = section.classList[1];
@@ -1288,8 +1288,8 @@
                     trigger: "#section7 ul",
                     start: "center 60%",
                     end: "center 30%",
-                    pin: "#section7",
-                    pinSpacing: true,
+                    // pin: "#section7",
+                    // pinSpacing: true,
                     scrub: 0.8,
                     anticipatePin: 1,
                     id: "event-cards-timeline",
@@ -1371,19 +1371,7 @@
             setTimeout(highlightCenterCard, 100);
         }
 
-        // ==================================================
-        // 3. content7 헤더 부분 애니메이션 (보이기만 하고 움직이지 않음)
-        // ==================================================
-        const content7Header = document.querySelector('.content7 .con_box > h3');
-        const content7Paragraph = document.querySelector('.content7 .con_box > p');
 
-        if (content7Header && content7Paragraph) {
-            // content7 헤더는 이미 보이는 상태로 유지
-            gsap.set([content7Header, content7Paragraph], {
-                opacity: 1,
-                y: 0
-            });
-        }
 
         animationsInitialized = true;
 
@@ -1479,5 +1467,6 @@
     // 초기 반응형 처리 (DOM 로드 전에도 실행)
     handleResponsiveClasses();
 </script>
+
 </body>
 </html>
