@@ -102,7 +102,7 @@
 @font-face {
     font-family: 'Wanted Sans';
     font-style: normal;
-    font-weight: 450;
+    font-weight: 500;
     src: url(../font/WantedSans-Medium.woff2) format('woff2'),
          url(../font/WantedSans-Medium.woff) format('woff'),
          url(../font/WantedSans-Medium.otf) format('opentype');
@@ -111,7 +111,7 @@
 @font-face {
     font-family: 'Wanted Sans';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     src: url(../font/WantedSans-SemiBold.woff2) format('woff2'),
          url(../font/WantedSans-SemiBold.woff) format('woff'),
          url(../font/WantedSans-SemiBold.otf) format('opentype');
@@ -120,7 +120,7 @@
 @font-face {
     font-family: 'Wanted Sans';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     src: url(../font/WantedSans-Bold.woff2) format('woff2'),
          url(../font/WantedSans-Bold.woff) format('woff'),
          url(../font/WantedSans-Bold.otf) format('opentype');
