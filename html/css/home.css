@@ -1692,8 +1692,10 @@ button {
   padding: 52px 40px 56px;
   width: 478px;
   border-radius: 12px;
-  /* border: 2px solid #49C9FF; */
-  background: linear-gradient(106deg, rgba(255, 255, 255, 0.90) 3.04%, rgba(255, 255, 255, 0.30) 96.05%), #FFF;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #a57a6410 80%, #49C9FF 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   box-shadow: 8.051px 24.152px 89.45px -11.629px rgba(22, 52, 80, 0.10);
   backdrop-filter: blur(6px);
 }
@@ -3080,7 +3082,7 @@ button {
 
   /********** content2 **********/
   .project_wrap .content2 {
-    margin-top: 212px;
+    margin-top: 120px;
   }
 
   .project_wrap .content2 .con2_p {
@@ -3089,7 +3091,7 @@ button {
   }
 
   .project_wrap .content2 .con2_p2 {
-    margin-top: 267px;
+    margin-top: 120px;
   }
 
   .project_wrap .content2 .con2_cards {
@@ -3126,7 +3128,7 @@ button {
   }
 
   .project_wrap .content2 .con2_p4 {
-    margin-top: 200px;
+    margin-top: 120px;
   }
 
   .project_wrap .content2 .con2_boxs {
@@ -3232,7 +3234,8 @@ button {
   }
 
   .project_wrap .content3 .con_box{
-    margin-bottom:89px;
+    margin-top:120px;
+    margin-bottom:50px;
   }
 
   .project_wrap .content3 .con_box>span {
@@ -3314,7 +3317,7 @@ button {
   .project_wrap .content3 .con_box>h3.custom {
     margin-top: 111px;
     font-size: 36px;
-    margin-bottom: 160px;
+    margin-bottom: 100px;
   }
 
   /********** content4 **********/
@@ -3346,7 +3349,7 @@ button {
   }
 
   .project_wrap .content4 .con_box>span {
-    margin-top: 200px;
+    margin-top: 120px;
     font-size: 13px;
     letter-spacing: -0.13px;
   }
@@ -3646,14 +3649,14 @@ button {
 
   /********** content7 **********/
   .project_wrap .content7 {
-    margin-top: 200px;
+    margin-top: 120px;
   }
 
   .project_wrap .content7 .con_box #section7 {
     margin-top: 0;
     padding: 0 24px;
     position: relative;
-    margin-bottom: 200px;
+    margin-bottom: 120px;
   }
 
 
@@ -3810,7 +3813,7 @@ button {
   }
 
   .project_wrap .content7 .con_box>.graybox {
-    margin-top: 160px;
+    margin-top: 120px;
     width: 100%;
     background: #F4F4F4;
     display: flex;
@@ -3832,6 +3835,7 @@ button {
   }
 
   .project_wrap .content7 .con_box>.graybox>div {
+    width:100%;
     margin-top: 46px;
     display: flex;
     justify-content: space-between;
@@ -3858,9 +3862,9 @@ button {
     padding: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: #444;
-    font-size: 13px;
+    font-size: 3.155vw;/*13px*/
     font-weight: 400;
     line-height: 160%;
     letter-spacing: -0.13px;
@@ -3873,8 +3877,10 @@ button {
     padding: 40px;
     width: 100%;
     border-radius: 12px;
-    /* border: 2px solid #49C9FF; */
-    background: linear-gradient(106deg, rgba(255, 255, 255, 0.90) 3.04%, rgba(255, 255, 255, 0.30) 96.05%), #FFF;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #a57a6410 80%, #49C9FF 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     box-shadow: 8.051px 24.152px 89.45px -11.629px rgba(22, 52, 80, 0.10);
     backdrop-filter: blur(6px);
   }
@@ -3892,14 +3898,14 @@ button {
     border-radius: 12px;
     background: #F6F6F6;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
     color: #111;
-    font-size: 15px;
+    font-size: 3.8vw; /*17px*/
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: -0.17px;
+    letter-spacing: -0.7px;
   }
 
   .right_slider .rolling {
