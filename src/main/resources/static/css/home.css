@@ -3857,7 +3857,7 @@ button {
       margin-top: 12px;
       border-radius: 12px;
       background: #F6F6F6;
-      padding: 12px;
+      padding: 12px 13vw;/*12px 54px*/
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -3866,7 +3866,7 @@ button {
       font-weight: 400;
       line-height: 160%;
       letter-spacing: -0.13px;
-      gap: 12px;
+      gap: 8.74px;
   }
 
   .project_wrap .content7 .con_box>.graybox>div .samhago_after {
@@ -4412,6 +4412,10 @@ button {
 @media only screen and (max-width:375px) {
   .project_wrap .content6 .con_box>div>h3 {
     font-size: 28px;
+  }
+
+  .project_wrap .content7 .con_box>.graybox>div .samhago_before ul li{
+      padding:12px 11vw;
   }
 
   .project_wrap .content9 .con_box>.question_list>li th,
