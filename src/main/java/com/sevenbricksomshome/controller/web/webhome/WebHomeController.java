@@ -49,4 +49,32 @@ public class WebHomeController extends ManagerDraftAction{
 		log.debug("WebIndexController  indexIntro END");
 		return "/index";
 	}
+
+    /**
+     * SNS 공구용 인덱스
+     * @param request
+     * @return
+     */
+	@RequestMapping(value="/promo")
+	public String promoIntro(HttpServletRequest request) {
+
+		log.debug("WebIndexController promoIntro START");
+
+		try{
+			// 접속 로그 저장
+			HashMap<String, Object> visitLogParamMap = RequestLogUtil.getVisitLogParameterMap(request);
+
+			visitLogParamMap.put("regId", "SYSTEM");
+			visitLogParamMap.put("modId", "SYSTEM");
+			visitLogParamMap.put("workType", "PROMOTION");
+			visitLogService.insertVisitLog(visitLogParamMap);
+
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		log.debug("WebIndexController promoIntro END");
+		return "/promo";
+	}
 }

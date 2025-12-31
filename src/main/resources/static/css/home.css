@@ -1877,7 +1877,7 @@ button {
 }
 
 /* 인스타 공구 이전 */
-.project_wrap .content8 .con_box .bluebox>div {
+.project_wrap .content8:not(.content_promo) .con_box .bluebox>div {
   margin-top: 40px;
   width: 1048px;
   display: flex;
@@ -1892,7 +1892,7 @@ button {
   backdrop-filter: blur(40px);
 }
 
-.project_wrap .content8 .con_box .bluebox>div>p {
+.project_wrap .content8:not(.content_promo) .con_box .bluebox>div>p {
   color: #111;
   font-size: 20px;
   font-weight: 600;
@@ -1900,7 +1900,7 @@ button {
   letter-spacing: -0.2px;
 }
 
-.project_wrap .content8 .con_box .bluebox>div>h3 {
+.project_wrap .content8:not(.content_promo) .con_box .bluebox>div>h3 {
   color: #111;
   font-size: 60px;
   font-weight: 700;
@@ -1908,7 +1908,7 @@ button {
   letter-spacing: -0.6px;
 }
 
-.project_wrap .content8 .con_box .bluebox>div>span {
+.project_wrap .content8:not(.content_promo) .con_box .bluebox>div>span {
   color: #444;
   text-align: center;
   font-size: 18px;
@@ -1918,7 +1918,7 @@ button {
 }
 
 /* 인스타 공구 이후 */
-/* .project_wrap .content8 .con_box .bluebox .price{
+ .project_wrap .content8.content_promo .con_box .bluebox .price{
   margin-top: 40px;
   width: 1048px;
   height:275px;
@@ -1927,7 +1927,7 @@ button {
   align-items: flex-start;
   gap:20px;
 }
-.project_wrap .content8 .con_box .bluebox .price > div{
+.project_wrap .content8.content_promo .con_box .bluebox .price > div{
   width:50%;
   height:100%;
   display: flex;
@@ -1941,7 +1941,7 @@ button {
   box-shadow: 8.051px 24.152px 89.45px -11.629px rgba(22, 52, 80, 0.10);
   backdrop-filter: blur(40px);
 }
-.project_wrap .content8 .con_box .bluebox .price > div .price_top_span{
+.project_wrap .content8.content_promo .con_box .bluebox .price > div .price_top_span{
   color: #444;
   text-align: center;
   font-size: 16px;
@@ -1949,7 +1949,7 @@ button {
   line-height: 100%;
   letter-spacing: -0.16px;
 }
-.project_wrap .content8 .con_box .bluebox .price > div > p{
+.project_wrap .content8.content_promo .con_box .bluebox .price > div > p{
   margin-top:12px;
   color: #111;
   text-align: center;
@@ -1958,16 +1958,16 @@ button {
   line-height: 100%;
   letter-spacing: -0.2px;
 }
-.project_wrap .content8 .con_box .bluebox .price > div > p > .price_off{color: #1FBDFF;font-weight: 700;}
+.project_wrap .content8.content_promo .con_box .bluebox .price > div > p > .price_off{color: #1FBDFF;font-weight: 700;}
 
-.project_wrap .content8 .con_box .bluebox .price > div > div{
+.project_wrap .content8.content_promo .con_box .bluebox .price > div > div{
   margin-top:33px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.project_wrap .content8 .con_box .bluebox .price > div > div h4{
+.project_wrap .content8.content_promo .con_box .bluebox .price > div > div h4{
   color: #111;
   text-align: center;
   font-size: 40px;
@@ -1976,7 +1976,7 @@ button {
   letter-spacing: -0.4px;
 }
 
-.project_wrap .content8 .con_box .bluebox .price > div > div .price_normal{
+.project_wrap .content8.content_promo .con_box .bluebox .price > div > div .price_normal{
   margin-right:10px;
   color: #C7C7C7;
   text-align: center;
@@ -1987,7 +1987,7 @@ button {
   text-decoration-line: line-through;
 }
 
-.project_wrap .content8 .con_box .bluebox .price > div > button{
+.project_wrap .content8.content_promo .con_box .bluebox .price > div > button{
   margin-top:20px;
   width:100%;
   padding:19px 0;
@@ -2001,11 +2001,11 @@ button {
   letter-spacing: -0.16px;
 }
 
-.project_wrap .content8 .con_box .bluebox .price > div > button:hover {
+.project_wrap .content8.content_promo .con_box .bluebox .price > div > button:hover {
   color: #FFF;
   background: #1BB4F5;
   font-weight: 600;
-} */
+}
 /* 인스타 공구 이후 */
 
 .project_wrap .content8 .con_box .bluebox>ul {
@@ -3967,7 +3967,7 @@ button {
   }
 
   /* 인스타 공구 이전 */
-  .project_wrap .content8 .con_box .bluebox>div {
+  .project_wrap .content8:not(.content_promo) .con_box .bluebox>div {
     margin-top: 40px;
     width: 100%;
     display: flex;
@@ -3982,7 +3982,7 @@ button {
     backdrop-filter: blur(40px);
   }
 
-  .project_wrap .content8 .con_box .bluebox>div>p {
+  .project_wrap .content8:not(.content_promo) .con_box .bluebox>div>p {
     color: #111;
     font-size: 18px;
     font-weight: 600;
@@ -3990,7 +3990,7 @@ button {
     letter-spacing: -0.18px;
   }
 
-  .project_wrap .content8 .con_box .bluebox>div>span {
+  .project_wrap .content8:not(.content_promo) .con_box .bluebox>div>span {
     color: #444;
     text-align: center;
     font-size: 17px;
@@ -3999,7 +3999,7 @@ button {
     letter-spacing: -0.17px;
   }
 
-  .project_wrap .content8 .con_box .bluebox>div>h3 {
+  .project_wrap .content8:not(.content_promo) .con_box .bluebox>div>h3 {
     color: #111;
     font-size: 40px;
     font-weight: 700;
@@ -4008,44 +4008,46 @@ button {
   }
 
   /* 인스타 공구 이후 */
-  /* .project_wrap .content8 .con_box .bluebox .price {
-    margin-top: 40px;
-    width: 100%;
-    height:unset;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    gap: 16px;
-}
-.project_wrap .content8 .con_box .bluebox .price > div {
-    width: 100%;
-    height: unset;
-    display: flex;
-    padding: 40px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    border: 1px solid rgba(26, 181, 246, 0.05);
-    background: linear-gradient(106deg, rgba(255, 255, 255, 0.70) 3.04%, rgba(255, 255, 255, 0.30) 96.05%);
-    box-shadow: 8.051px 24.152px 89.45px -11.629px rgba(22, 52, 80, 0.10);
-    backdrop-filter: blur(40px);
-}
-.project_wrap .content8 .con_box .bluebox .price > div .price_top_span{
-  font-size: 14px;
-  letter-spacing: -0.14px;
-}
-.project_wrap .content8 .con_box .bluebox .price > div > p{
-  margin-top:14px;
-  font-size: 18px;
-  letter-spacing: -0.18px;
-}
+   .project_wrap .content8.content_promo .con_box .bluebox .price {
+        margin-top: 40px;
+        width: 100%;
+        height:unset;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .project_wrap .content8.content_promo .con_box .bluebox .price > div {
+        width: 100%;
+        height: unset;
+        display: flex;
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        border: 1px solid rgba(26, 181, 246, 0.05);
+        background: linear-gradient(106deg, rgba(255, 255, 255, 0.70) 3.04%, rgba(255, 255, 255, 0.30) 96.05%);
+        box-shadow: 8.051px 24.152px 89.45px -11.629px rgba(22, 52, 80, 0.10);
+        backdrop-filter: blur(40px);
+    }
+    .project_wrap .content8.content_promo .con_box .bluebox .price > div .price_top_span{
+      font-size: 14px;
+      letter-spacing: -0.14px;
+    }
+    .project_wrap .content8.content_promo .con_box .bluebox .price > div > p{
+      margin-top:14px;
+      font-size: 18px;
+      letter-spacing: -0.18px;
+    }
 
-.project_wrap .content8 .con_box .bluebox .price > div > div{margin-top:23px;}
+    .project_wrap .content8.content_promo .con_box .bluebox .price > div > div{margin-top:23px;}
 
-.project_wrap .content8 .con_box .bluebox .price > div > div h4{font-size: 34px;letter-spacing: -0.34px;} */
-  /* 인스타 공구 이후 */
+    .project_wrap .content8.content_promo .con_box .bluebox .price > div > div h4{font-size: 34px;letter-spacing: -0.34px;}
+    /* 인스타 공구 이후 */
+
+
   .project_wrap .content8 .con_box .bluebox>ul {
     margin-top: 16px;
     width: 100%;
