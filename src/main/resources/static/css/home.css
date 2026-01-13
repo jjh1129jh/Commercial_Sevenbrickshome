@@ -141,6 +141,7 @@ button {
 
 .project_wrap .side div .application {
   background-color: #FFF;
+  transition: width 0.3s ease;
 }
 
 .project_wrap .side div .application>img {
@@ -148,10 +149,13 @@ button {
 }
 
 .project_wrap .side div .application>p {
-  font-size: 0;
-  display: none;
-  opacity: 0;
-  transition: display 0.3s ease, opacity 0.3s ease;
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
 }
 
 .project_wrap .side div .application:hover {
@@ -165,13 +169,14 @@ button {
 }
 
 .project_wrap .side div .application:hover>p {
-  opacity: 1;
-  display: block;
-  color: #444;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 120%;
-  letter-spacing: -0.16px;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    color: #444;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.16px;
 }
 
 .project_wrap .side div .talk {
@@ -235,10 +240,6 @@ button {
   align-items: center;
   margin-bottom: 0;
   gap: 73px;
-}
-
-.project_wrap header .header_btm ul * {
-  font-family: 'Pretendard';
 }
 
 .project_wrap header .header_btm ul li a {
