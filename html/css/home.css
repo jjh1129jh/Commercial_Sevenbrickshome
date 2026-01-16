@@ -160,7 +160,7 @@ button {
 
 .project_wrap .side div .application:hover {
   padding: 14px 17px;
-  width: 175px;
+  width: 148px;
   display: flex;
   border-radius: 999px;
   justify-content: space-around;
@@ -1203,7 +1203,7 @@ button {
 .project_wrap .content5 .yellow_box>img {
   position: absolute;
   opacity: 0.4;
-  width: 663px;
+  width: 596px;
   right: 0;
   top: 0px;
 }
@@ -3532,7 +3532,7 @@ button {
     opacity: 0.6;
     width: 343px;
     right: -120px;
-    top: 320px;
+    top: 200px;
   }
 
   .project_wrap .content5 .yellow_box>h4 {
