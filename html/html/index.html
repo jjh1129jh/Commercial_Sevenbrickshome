@@ -2276,149 +2276,127 @@ handleResponsiveClasses();
 </script>
 <script>
 // ============================================
-// 스크린샷 모드 v4 - transform 보존 + 스크롤 이벤트만 정지
+// 스크린샷 모드 v5 - 완전 정지 (transform 보존)
 // ============================================
 (function() {
     console.log('📸 스크린샷 모드 활성화...');
     
-    // 1. GSAP ScrollTrigger 완전 종료 (스크롤 연동 애니메이션 중지)
+    // 1. GSAP 완전 제거
     if (typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.getAll().forEach(st => st.kill(true));
         ScrollTrigger.clearMatchMedia();
-        console.log('✅ ScrollTrigger 비활성화');
     }
-    
-    // 2. GSAP 애니메이션 모두 중단
     if (typeof gsap !== 'undefined') {
         gsap.globalTimeline.clear();
-        gsap.timeline().killAll();
-        console.log('✅ GSAP 애니메이션 중단');
+        gsap.ticker.remove();
     }
     
-    // 3. 모든 타이머 제거 (자동 슬라이드 등)
-    for (let i = 1; i < 9999; i++) {
+    // 2. 모든 타이머 제거
+    for (let i = 1; i < 99999; i++) {
         clearTimeout(i);
         clearInterval(i);
     }
-    console.log('✅ 모든 타이머 제거');
     
-    // 4. requestAnimationFrame 차단
-    const originalRAF = window.requestAnimationFrame;
-    window.requestAnimationFrame = function(cb) {
-        return originalRAF.call(window, cb);
-    };
-    
-    // 5. CSS로 애니메이션만 중지 (transform은 유지)
+    // 3. CSS로 모든 애니메이션 강제 중지
     const style = document.createElement('style');
+    style.id = 'screenshot-freeze';
     style.textContent = `
-        /* 실행 중인 모든 애니메이션 정지 */
-        * {
-            animation-play-state: paused !important;
-            transition-duration: 0s !important;
-        }
-        
-        /* 롤링 애니메이션 정지 */
-        .track {
+        /* 모든 애니메이션과 트랜지션 강제 중지 */
+        *,
+        *::before,
+        *::after {
             animation: none !important;
-            animation-play-state: paused !important;
+            animation-duration: 0s !important;
+            animation-delay: 0s !important;
+            animation-iteration-count: 0 !important;
+            transition: none !important;
+            transition-duration: 0s !important;
+            transition-delay: 0s !important;
         }
         
-        /* 모든 요소 opacity만 1로 */
-        .content2, .content3, .content4, .content5, .content6, .content7, .content8, .content9, .content10,
+        /* opacity만 강제로 1로 설정 */
+        .content1, .content2, .content3, .content4, .content5,
+        .content6, .content7, .content8, .content9, .content10,
         .con2_p1, .con2_p4, .con2_boxs, .con2_cards ul li,
         .step1, .step2, .step3, .step4,
         .customh3, .con4_list li, .three_balloon li,
         .event_card, .event_card_inner, .event_text, .event_text2,
-        .imgbox.pc, .imgbox2.mb, .graybox, .right_slider,
+        .imgbox, .imgbox2, .graybox, .right_slider,
         .header_box, .con_box, .bluebox, .brownbox,
-        .autobox, .event_slider {
+        .autobox, .event_slider, .con4_slider {
             opacity: 1 !important;
             visibility: visible !important;
         }
         
-        /* 블러 효과 제거 */
-        .blurred {
+        /* 블러 제거 */
+        .blurred, .fade-out {
             filter: none !important;
+            opacity: 1 !important;
         }
         
-        /* 슬라이더 정지 */
-        .con4_slider {
+        /* 트랙 롤링 정지 */
+        .track {
             animation: none !important;
-            transition: none !important;
+            transform: none !important;
         }
         
-        /* boxList 슬라이드 정지 */
-        #boxList {
-            transition: none !important;
-            animation: none !important;
-        }
-        
-        /* 질문 토글 열기 */
+        /* 질문 토글 모두 열기 */
         .toggletxt {
             display: block !important;
             max-height: none !important;
+            opacity: 1 !important;
         }
         
-        /* side 버튼, progress 숨기기 */
-        .side,
-        .progress_cirlce {
+        /* 사이드 버튼 숨기기 */
+        .side, .progress_cirlce {
             display: none !important;
         }
     `;
+    
+    // 기존 스타일 제거 후 추가
+    const oldStyle = document.getElementById('screenshot-freeze');
+    if (oldStyle) oldStyle.remove();
     document.head.appendChild(style);
     
-    // 6. transition 제거 (transform은 유지)
+    // 4. 모든 요소의 인라인 스타일에서 애니메이션 관련 속성만 제거
     document.querySelectorAll('*').forEach(el => {
+        el.style.animation = 'none';
         el.style.transition = 'none';
         el.style.animationPlayState = 'paused';
-        // transform은 건드리지 않음!
-    });
-    
-    // 7. opacity만 1로 설정 (transform은 그대로)
-    const selectors = [
-        '.content2', '.content3', '.content4', '.content5', '.content6', '.content7', '.content8', '.content9', '.content10',
-        '.con2_p1', '.con2_p4', '.con2_boxs', '.con2_cards ul li',
-        '.step1', '.step2', '.step3', '.step4',
-        '.customh3', '.con4_list li', '.three_balloon li',
-        '.event_card', '.event_card_inner', '.event_text', '.event_text2',
-        '.imgbox.pc', '.imgbox2.mb', '.graybox', '.right_slider',
-        '.header_box', '.con_box', '.bluebox', '.brownbox',
-        '.autobox', '.event_slider'
-    ];
-    
-    selectors.forEach(selector => {
-        document.querySelectorAll(selector).forEach(el => {
+        // opacity만 설정 (transform은 건드리지 않음)
+        const computed = window.getComputedStyle(el);
+        if (parseFloat(computed.opacity) < 1) {
             el.style.opacity = '1';
-            el.style.visibility = 'visible';
-        });
+        }
     });
     
-    // 8. 블러 클래스 제거
-    document.querySelectorAll('.blurred').forEach(el => {
-        el.classList.remove('blurred');
+    // 5. 블러/페이드 클래스 제거
+    document.querySelectorAll('.blurred, .fade-out').forEach(el => {
+        el.classList.remove('blurred', 'fade-out');
     });
     
-    // 9. fade-out 클래스 제거
-    document.querySelectorAll('.fade-out').forEach(el => {
-        el.classList.remove('fade-out');
-    });
-    
-    // 10. 스크롤 최상단
+    // 6. 스크롤 최상단
     window.scrollTo(0, 0);
     
-    // 11. 스크롤 이벤트 중지 (스크롤은 가능하지만 트리거 발동 안함)
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
-    EventTarget.prototype.addEventListener = function(type, listener, options) {
-        // scroll, wheel, touch 이벤트만 차단
-        if (type === 'scroll' || type === 'wheel' || type === 'touchmove' || type === 'touchstart') {
-            console.log('🚫 스크롤 이벤트 리스너 차단됨:', type);
-            return;
-        }
-        return originalAddEventListener.call(this, type, listener, options);
-    };
+    // 7. window 객체의 스크롤 이벤트 리스너 직접 제거
+    // 기존 스크롤 이벤트를 복사본으로 대체
+    const oldScroll = window.onscroll;
+    const oldWheel = window.onwheel;
+    const oldTouch = window.ontouchmove;
     
-    console.log('✅ 완료 - transform 보존, 스크롤 이벤트 정지됨');
-    console.log('💡 팁: 새로고침하면 원래 상태로 복구됩니다');
+    window.onscroll = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    
+    // 8. jQuery 이벤트 제거 (jQuery 사용 중인 경우)
+    if (typeof $ !== 'undefined') {
+        $(window).off('scroll');
+        $(document).off('scroll');
+        $('*').off('scroll');
+    }
+    
+    console.log('✅ 스크린샷 모드 활성화 완료');
+    console.log('💡 모든 애니메이션 정지, transform 보존됨');
     
 })();
 </script>
