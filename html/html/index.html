@@ -2276,80 +2276,81 @@ handleResponsiveClasses();
 </script>
 <script>
 // ============================================
-// 스크린샷 모드 v3 - .imgbox.pc 스타일 보존
+// 스크린샷 모드 v4 - transform 보존 + 스크롤 이벤트만 정지
 // ============================================
 (function() {
     console.log('📸 스크린샷 모드 활성화...');
     
-    // 1. GSAP ScrollTrigger 완전 종료
+    // 1. GSAP ScrollTrigger 완전 종료 (스크롤 연동 애니메이션 중지)
     if (typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.getAll().forEach(st => st.kill(true));
         ScrollTrigger.clearMatchMedia();
+        console.log('✅ ScrollTrigger 비활성화');
     }
     
     // 2. GSAP 애니메이션 모두 중단
     if (typeof gsap !== 'undefined') {
         gsap.globalTimeline.clear();
+        gsap.timeline().killAll();
+        console.log('✅ GSAP 애니메이션 중단');
     }
     
-    // 3. 모든 타이머 제거
+    // 3. 모든 타이머 제거 (자동 슬라이드 등)
     for (let i = 1; i < 9999; i++) {
         clearTimeout(i);
         clearInterval(i);
     }
+    console.log('✅ 모든 타이머 제거');
     
-    // 4. CSS 강제 적용 - .imgbox.pc 예외 처리
+    // 4. requestAnimationFrame 차단
+    const originalRAF = window.requestAnimationFrame;
+    window.requestAnimationFrame = function(cb) {
+        return originalRAF.call(window, cb);
+    };
+    
+    // 5. CSS로 애니메이션만 중지 (transform은 유지)
     const style = document.createElement('style');
     style.textContent = `
-        /* 모든 요소 애니메이션 강제 중지 (.imgbox.pc는 제외) */
-        *:not(.imgbox):not(.imgbox *):not(.imgbox.pc):not(.imgbox.pc *),
-        *:not(.imgbox)::before,
-        *:not(.imgbox)::after {
-            transition: none !important;
+        /* 실행 중인 모든 애니메이션 정지 */
+        * {
+            animation-play-state: paused !important;
+            transition-duration: 0s !important;
+        }
+        
+        /* 롤링 애니메이션 정지 */
+        .track {
             animation: none !important;
             animation-play-state: paused !important;
         }
         
-        
-        /* 모든 요소 보이게 설정 */
+        /* 모든 요소 opacity만 1로 */
         .content2, .content3, .content4, .content5, .content6, .content7, .content8, .content9, .content10,
         .con2_p1, .con2_p4, .con2_boxs, .con2_cards ul li,
         .step1, .step2, .step3, .step4,
         .customh3, .con4_list li, .three_balloon li,
         .event_card, .event_card_inner, .event_text, .event_text2,
-        .graybox, .right_slider,
+        .imgbox.pc, .imgbox2.mb, .graybox, .right_slider,
         .header_box, .con_box, .bluebox, .brownbox,
         .autobox, .event_slider {
             opacity: 1 !important;
             visibility: visible !important;
         }
         
-        /* .imgbox.pc는 opacity만 조정하고 transform은 건드리지 않음 */
-        .imgbox.pc {
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-        
-        /* 슬라이더 초기화 */
-        .con4_slider {
-            position: relative !important;
-            left: 0 !important;
-            display: block !important;
-        }
-        
-        /* 트랙 롤링 정지 */
-        .track {
-            animation: none !important;
-        }
-        
-        /* 블러 제거 */
+        /* 블러 효과 제거 */
         .blurred {
             filter: none !important;
         }
         
-        /* boxList 초기화 */
+        /* 슬라이더 정지 */
+        .con4_slider {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        /* boxList 슬라이드 정지 */
         #boxList {
-            transform: translateX(0) !important;
+            transition: none !important;
+            animation: none !important;
         }
         
         /* 질문 토글 열기 */
@@ -2366,48 +2367,58 @@ handleResponsiveClasses();
     `;
     document.head.appendChild(style);
     
-    // 5. 인라인 스타일 초기화 (.imgbox.pc는 제외)
-    document.querySelectorAll('*:not(.imgbox):not(.imgbox *)').forEach(el => {
-        if (!el.closest('.imgbox')) {
-            el.style.transition = 'none';
-            el.style.animation = 'none';
-            el.style.transform = '';
-            el.style.opacity = '';
-        }
+    // 6. transition 제거 (transform은 유지)
+    document.querySelectorAll('*').forEach(el => {
+        el.style.transition = 'none';
+        el.style.animationPlayState = 'paused';
+        // transform은 건드리지 않음!
     });
     
-    // .imgbox.pc는 opacity만 설정
-    document.querySelectorAll('.imgbox.pc').forEach(el => {
-        el.style.opacity = '1';
-        // transform과 transition은 그대로 유지
+    // 7. opacity만 1로 설정 (transform은 그대로)
+    const selectors = [
+        '.content2', '.content3', '.content4', '.content5', '.content6', '.content7', '.content8', '.content9', '.content10',
+        '.con2_p1', '.con2_p4', '.con2_boxs', '.con2_cards ul li',
+        '.step1', '.step2', '.step3', '.step4',
+        '.customh3', '.con4_list li', '.three_balloon li',
+        '.event_card', '.event_card_inner', '.event_text', '.event_text2',
+        '.imgbox.pc', '.imgbox2.mb', '.graybox', '.right_slider',
+        '.header_box', '.con_box', '.bluebox', '.brownbox',
+        '.autobox', '.event_slider'
+    ];
+    
+    selectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+        });
     });
     
-    // 6. 특정 요소 직접 조작
-    document.querySelectorAll('.con4_slider').forEach(el => {
-        el.style.transform = 'translateX(0)';
-        el.style.left = '0';
-        el.style.position = 'relative';
-        el.style.display = 'block';
-    });
-    
-    document.querySelectorAll('.track').forEach(el => {
-        el.style.transform = 'translateX(0)';
-    });
-    
-    const boxList = document.getElementById('boxList');
-    if (boxList) {
-        boxList.style.transform = 'translateX(0)';
-    }
-    
-    // 7. 블러 클래스 제거
+    // 8. 블러 클래스 제거
     document.querySelectorAll('.blurred').forEach(el => {
         el.classList.remove('blurred');
     });
     
-    // 8. 스크롤 최상단
+    // 9. fade-out 클래스 제거
+    document.querySelectorAll('.fade-out').forEach(el => {
+        el.classList.remove('fade-out');
+    });
+    
+    // 10. 스크롤 최상단
     window.scrollTo(0, 0);
     
-    console.log('✅ 완료 - .imgbox.pc 스타일 보존됨');
+    // 11. 스크롤 이벤트 중지 (스크롤은 가능하지만 트리거 발동 안함)
+    const originalAddEventListener = EventTarget.prototype.addEventListener;
+    EventTarget.prototype.addEventListener = function(type, listener, options) {
+        // scroll, wheel, touch 이벤트만 차단
+        if (type === 'scroll' || type === 'wheel' || type === 'touchmove' || type === 'touchstart') {
+            console.log('🚫 스크롤 이벤트 리스너 차단됨:', type);
+            return;
+        }
+        return originalAddEventListener.call(this, type, listener, options);
+    };
+    
+    console.log('✅ 완료 - transform 보존, 스크롤 이벤트 정지됨');
+    console.log('💡 팁: 새로고침하면 원래 상태로 복구됩니다');
     
 })();
 </script>
